@@ -12,7 +12,7 @@ nav: sidebar/rest-api.html
 
 <!--more-->
 
-**# Public Rest API for Coins (2022-09-12)
+**# Public Rest API for Coins (2025-06-19)
 
 ## General API Information
 
