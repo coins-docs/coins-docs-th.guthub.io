@@ -153,7 +153,6 @@ const isDark = ref(false)
 
 const navItems = [
   { text: 'Rest API', link: '/rest-api' },
-  { text: 'Web Socket Streams', link: '/web-socket-streams' },
   { text: 'User Data Stream', link: '/user-data-stream' },
   { text: 'Errors', link: '/errors' }
 ]

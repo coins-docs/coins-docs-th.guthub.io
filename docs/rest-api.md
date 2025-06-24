@@ -6,83 +6,14 @@ title: "Rest-Api"
 
 ## Change log:
 
-2025-05-21: Added the `statuses` parameter to the `/openapi/wallet/v1/deposit/history` endpoint.
-
-2025-04-23: Added the `/openapi/v1/fund-collect/collect-from-sub-account`,`/openapi/v1/fund-collect/get-fund-record` endpoint.
-
-2025-04-03: Updated status parameter descriptions for endpoints: `openapi/fiat/v1/details`, `openapi/fiat/v1/history`, `openapi/fiat/v2/history`.
-
-2025-03-25: Added the `/openapi/v1/asset/transaction/history` endpoint.
-
-2025-01-02: Added the `/openapi/fiat/v2/history` endpoint.
-
-2024-10-11: Added the `/openapi/v1/sub-account/wallet/deposit/address`,`/openapi/v1/sub-account/wallet/deposit/history` endpoint.
-
-2024-08-26: Added the `startTime` `endTime` parameter to the `openapi/fiat/v1/history` endpoint.
-
-2024-05-10: Added the `from_address` `to_address` parameter to the `/openapi/transfer/v3/transfers` endpoint.
-
-2024-04-29: Added the `inversePrice` response parameter to the `/openapi/convert/query-order-history` endpoint.
-
-2024-04-24: Added <a href="#sub-account-endpoints">Sub-account</a> endpoints: `/openapi/v1/sub-account/list`, `/openapi/v1/sub-account/create`, `/openapi/v1/sub-account/asset`, `/openapi/v1/sub-account/transfer/universal-transfer`, `/openapi/v1/sub-account/transfer/sub-to-master`, `/openapi/v1/sub-account/transfer/universal-transfer-history`, `/openapi/v1/sub-account/transfer/sub-history`, `/openapi/v1/sub-account/apikey/ip-restriction`, `/openapi/v1/sub-account/apikey/add-ip-restriction`, `/openapi/v1/sub-account/apikey/delete-ip-restriction`.
-
-2024-04-17: Added the `targetAmount` parameter to the `/openapi/convert/v1/get-quote` endpoint.
-
-2024-02-19: Added the `openapi/v1/user/ip` endpoint.
-
-2023-12-29: Added kyc remaining and limit to the `/openapi/v1/account` endpoint.
-
-2023-12-06: Added the `internalOrderId` generate rule description to the `/openapi/fiat/v1/cash-out` endpoint.
-
-2023-09-20: Added the `message` parameter to the `/openapi/transfer/v3/transfers` endpoint.
-
-2023-08-30: Added `/openapi/convert/v1/query-order-history`, and updated`openapi/fiat/v1/cash-out`, `openapi/fiat/v1/support-channel` docs.
-
-2023-08-17: Updated `/openapi/convert/v1/accept-quote`, `openapi/fiat/v1/history`, `openapi/fiat/v1/cash-out`, `openapi/fiat/v1/support-channel`, `openapi/migration/v4/sellorder`, `openapi/migration/v4/validate-field`, `openapi/migration/v4/payout-outlets/{id}`, `openapi/migration/v4/payout-outlet-categories/{id}`, `openapi/migration/v4/payout-outlet-fees` docs.
-
-2023-08-08: Updated `openapi/fiat/v1/history`, `openapi/fiat/v1/cash-out`, `openapi/fiat/v1/support-channel`, `openapi/migration/v4/sellorder`, `openapi/migration/v4/validate-field`, `openapi/migration/v4/payout-outlets/{id}`, `openapi/migration/v4/payout-outlet-categories/{id}`, `openapi/migration/v4/payout-outlet-fees` docs.  
-
-2023-07-31: Added `openapi/fiat/v1/history` endpoint to query fiat currency order history 
-
-2023-07-15: Updated `MARKET order type now supports quantity for buy and quoteOrderQty for sell` 
-
-2023-07-15: Added  `stpFlag` in the request of New order (TRADE) endpoint for anti self-trading behaviour.
-
-2023-07-15: Added order status `EXPIRED`.
-
-2023-06-08: Added the `payment request` interface.
-
-2023-05-17: The disclaimer regarding the following endpoints being in the QA phase has been removed as the QA process has been successfully completed: `/openapi/account/v3/crypto-accounts`, `/openapi/transfer/v3/transfers`, and `/openapi/transfer/v3/transfers/{id}`.
-
-2023-05-08: Added the following endpoints: `/openapi/account/v3/crypto-accounts`, `/openapi/transfer/v3/transfers`, and `/openapi/transfer/v3/transfers/{id}`. The endpoints are still in QA and are appropriately marked as such.
-
-2023-05-04: Removed the endpoints `/openapi/convert/v1/query-order-history` and `openapi/fiat/v1/history`; removed a personal detail from a code sample in `/openapi/fiat/v1/details`. 
-
-2023-04-13: Added the `invoice` interface.
-
-2023-04-10: Added the `transfer` interfaces.
-
-2022-09-12: Modified the `symbol` in the `Cancel All Open Orders on a Symbol` API request as required.
-
-2022-09-09: Changed the `orderId/transactTime/time/updateTime` response from string to number in order related interfaces.
-
-2022-08-24: Updated the `STOP_LOSS/TAKE_PROFIT` description in the `New order (TRADE)` API.
-
-2022-08-23: Fixed incorrect depth information.
-
-2022-08-19: Added weight information for all interfaces.
-
-2022-08-12: Changed `maxNumOrders` to 200 in `filter MAX_NUM_ORDERS`.
-
-2022-08-12: Changed `maxNumAlgoOrders` to 5 in `filter MAX_NUM_ALGO_ORDERS`.
 
 <!--more-->
 
-**# Public Rest API for Coins (2022-09-12)
+**# Public Rest API for Coins (2025-06-19)
 
 ## General API Information
 
-* The base endpoint is: **https://api.pro.coins.ph**
+* The base endpoint is: **https://api.pro.coins.th**
 * All endpoints return data in either a JSON object or array format.
 * Data is returned in **ascending** order, with the oldest records appearing first and the newest records appearing last.
 * All time and timestamp related fields are expressed in milliseconds.
@@ -153,12 +84,12 @@ Postman collections are available, and they are recommended for new users seekin
 
 
 
-### Order Rate Limits
+<!-- ### Order Rate Limits
 
 * When the order count exceeds the limit, you will receive a 429 error without the `Retry-After` header.
 
 * The order rate limit is counted against each IP and UID.
-
+ -->
 
 
 ### Websocket Limits
@@ -192,13 +123,13 @@ NONE | none                          | Endpoint can be accessed freely.
 TRADE| `X-COINS-APIKEY`、`signature`、`timestamp` | Endpoint requires sending a valid API Key and signature and timing security. 
 USER_DATA| `X-COINS-APIKEY`、`signature`、`timestamp`                         | Endpoint requires sending a valid API Key and signature and timing security.. 
 USER_STREAM | `X-COINS-APIKEY`                         | Endpoint requires sending a valid API Key.               
-MARKET_DATA | `X-COINS-APIKEY`                         | Endpoint requires sending a valid API Key.               
+<!-- MARKET_DATA | `X-COINS-APIKEY`                         | Endpoint requires sending a valid API Key.                -->
 
-* `TRADE` and `USER_DATA` endpoints are `SIGNED` endpoints.
+* `USER_DATA` endpoints are `SIGNED` endpoints.
 
 
 
-### SIGNED (TRADE and USER_DATA) Endpoint Security
+### SIGNED (USER_DATA) Endpoint Security
 
 * `SIGNED` endpoints require an additional parameter, `signature`, to be
   sent in the  `query string` or `form request body` or `header`.
@@ -236,7 +167,7 @@ server.
 
 
 
-### SIGNED Endpoint Examples for POST /openapi/v1/order
+<!-- ### SIGNED Endpoint Examples for POST /openapi/v1/order
 
 Here is a step-by-step example of how to send a valid signed payload from the
 Linux command line using `echo`, `openssl`, and `curl`:
@@ -267,26 +198,26 @@ timestamp | 1538323200000
 ```shell
 [linux]$ echo -n "symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
 (stdin)= d7b09aa959094bafd1de10be3985651691fff6cc04b5cd94aea8cc1ca02e0ed8
-```
+``` -->
 
-* **curl command:**
+<!-- * **curl command:**
 
 ```shell
 (HMAC SHA256)
 [linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/v1/order?symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000&signature=d7b09aa959094bafd1de10be3985651691fff6cc04b5cd94aea8cc1ca02e0ed8'
-```
+``` -->
 
 
 
-#### Example 2: As a request body
+<!-- #### Example 2: As a request body
 
 * **requestBody:** symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000
 * **HMAC SHA256 signature:**
 
 ```shell
 [linux]$ echo -n "symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
-(stdin)= d7b09aa959094bafd1de10be3985651691fff6cc04b5cd94aea8cc1ca02e0ed8
-```
+(stdin)= d7b09aa959094bafd1de10be3985651691fff6cc04b5cd94aea8cc1ca02e0ed8 -->
+<!-- ```
 
 * **curl command:**
 
@@ -315,7 +246,7 @@ timestamp | 1538323200000
 [linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/v1/order?symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC' -d 'quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000&signature=340037ed5366e650bd0e09e170db4a6ace0a9cba3e8af4e5c37ba2143fb84de0'
 ```
 
-Note that in Example 3, the signature is different from the previous examples. Specifically, there should be no `&` character between `GTC` and `quantity=1`.
+Note that in Example 3, the signature is different from the previous examples. Specifically, there should be no `&` character between `GTC` and `quantity=1`. -->
 
 
 ## Public API Endpoints
@@ -331,7 +262,7 @@ These terms will be used throughout the documentation, so new users are encourag
 
 ### ENUM definitions
 
-**Symbol status:**
+<!-- **Symbol status:**
 
 * TRADING
 * BREAK (ongoing)
@@ -416,7 +347,7 @@ m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
 * 3d
 * 1w
 * 1M
-
+ -->
 
 
 ### General endpoints
@@ -874,7 +805,7 @@ If the client_transfer_id or id parameter is passed in, the type parameter is in
 
 
 
-#### Payment request (USER_DATA)
+<!-- #### (comment:payment) Payment request (USER_DATA)
 
 ```shell
 POST /openapi/v3/payment-request/payment-requests (HMAC SHA256)
@@ -914,7 +845,7 @@ timestamp          | LONG    | YES        |
         "payer_contact_info": "jennins@coins.ph"
     }
 }
-```
+``` -->
 
 
 
@@ -993,7 +924,7 @@ timestamp | LONG | YES |
 
 ### Market Data endpoints
 
-#### Order book
+<!-- #### Order book
 
 ```shell
 GET /openapi/quote/v1/depth
@@ -1989,7 +1920,7 @@ timestamp          | LONG   | YES        |
       "takerCommission": "0.001"
     }
   ]
-```
+``` -->
 
 
 
@@ -2223,7 +2154,7 @@ errorMessage	| Error message if order failed.
 
 
 
-### User data stream endpoints
+<!-- ### User data stream endpoints
 
 Specifics on how user data streams work is in another document(user-data-stream.md).
 
@@ -2554,11 +2485,11 @@ The `MAX_ALGO_ORDERS` filter defines the maximum number of untriggered "algo" or
 
 #### Exchange Filters
 
-None for now
+None for now -->
 
 
 
-### Fiat endpoints
+<!-- ### (Comment FIAT) Fiat endpoints
 
 #### Get supported fiat channels (TRADE)
 ```shell
@@ -3236,13 +3167,13 @@ dealCancel | boolean | If order can be canceled, value will be true.
     "total": 2
 }
 ```
-------
+------ -->
 
 
 
-### Sub-account endpoints
+## Sub-account endpoints
 
-#### Query Sub-account List (For Master Account)
+### Query Sub-account List (For Master Account)
 
 Applies to master accounts only.
 
@@ -3282,7 +3213,7 @@ timestamp     | LONG  | YES    | A point in time for which transfers are being q
 }
 ```
 
-#### Create a Virtual Sub-account(For Master Account)
+### Create a Virtual Sub-account(For Master Account)
 
 This interface currently supports the creation of virtual sub-accounts (maximum 30).
 
@@ -3311,7 +3242,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 ```
 
 
-#### Query Sub-account Assets (For Master Account)
+### Query Sub-account Assets (For Master Account)
 
 Query detailed balance information of a sub-account via the master account (applies to master accounts only).
 
@@ -3350,7 +3281,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 
 
 
-#### Universal Transfer (For Master Account)
+### Universal Transfer (For Master Account)
 
 Master account can initiate a transfer from any of its sub-accounts to the master account, or from the master account to any sub-account.
 
@@ -3389,7 +3320,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 }
 ```
 
-#### Transfer to Master (For Sub-account)
+### Transfer to Master (For Sub-account)
 
 Sub-account can initiate a transfer from itself to the master account.
 
@@ -3418,7 +3349,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 }
 ```
 
-#### Query Universal Transfer History (For Master Account)
+### Query Universal Transfer History (For Master Account)
 
 Applies to master accounts only.
 If startTime and endTime are not sent, this will return records of the last 30 days by default.
@@ -3469,7 +3400,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 ```
 
 
-#### Sub-account Transfer History (For Sub-account)
+### Sub-account Transfer History (For Sub-account)
 
 Applies to sub-accounts only.
 If startTime and endTime are not sent, this will return records of the last 30 days by default.
@@ -3516,7 +3447,7 @@ clientTranId     | STRING   | NO       |
 ```
 
 
-#### Get IP Restriction for a Sub-account API Key (For Master Account)
+### Get IP Restriction for a Sub-account API Key (For Master Account)
 
 Query detailed IPs for a sub-account API key.
 
@@ -3549,7 +3480,7 @@ timestamp     | LONG   | YES       | A point in time for which transfers are bei
 }
 ```
 
-####  Add IP Restriction for Sub-Account API key (For Master Account)
+###  Add IP Restriction for Sub-Account API key (For Master Account)
 
 ```shell
 POST /openapi/v1/sub-account/apikey/add-ip-restriction
@@ -3582,7 +3513,7 @@ timestamp     | LONG   | YES       | A point in time for which transfers are bei
 }
 ```
 
-####  Delete IP List For a Sub-account API Key (For Master Account)
+###  Delete IP List For a Sub-account API Key (For Master Account)
 
 ```shell
 POST /openapi/v1/sub-account/apikey/delete-ip-restriction
@@ -3615,7 +3546,7 @@ timestamp     | LONG   | YES       | A point in time for which transfers are bei
 ```
 
 
-####  Get Sub-account Deposit Address(For Master Account)
+###  Get Sub-account Deposit Address(For Master Account)
 
 ```shell
 GET /openapi/v1/sub-account/wallet/deposit/address
@@ -3646,7 +3577,7 @@ timestamp     | LONG   | YES       | A point in time for which transfers are bei
 }
 ```
 
-####  Get Sub-account Deposit History(For Master Account)
+###  Get Sub-account Deposit History(For Master Account)
 
 ```shell
 GET /openapi/v1/sub-account/wallet/deposit/history
@@ -3781,7 +3712,7 @@ size | INT   | NO        |  Page size (default:100,max:100)
 ```
  Collection Task Status: `INIT`, `SUCCESS`, `PARTIAL_SUCCESS`, `PROCESSING`,`FAILED`
 
-#### Get payment request (USER_DATA)
+<!-- #### Get payment request (USER_DATA)
 
 ```shell
 GET /openapi/v3/payment-request/get-payment-request (HMAC SHA256)
@@ -3881,11 +3812,11 @@ timestamp          | LONG   | YES        |
 
 ```javascript
 true
-```
+``` -->
 
 
 
-## Merchant Endpoints
+<!-- ## Merchant Endpoints
 
 ### Signature
 
@@ -4107,10 +4038,10 @@ invoice.created	| The invoice has been created.
 invoice.updated	| The invoice has been updated. This may be due to the payment received for the invoice.
 invoice.fully_paid	| The invoice payment has been completed.
 invoice.payment_reference_number_generated| The invoice payment reference number has been generated.
+ -->
 
 
-
-### Old endpoints from coins.ph (Legacy)
+<!-- ### Old endpoints from coins.ph (Legacy)
 
 #### Create a new sellorder
 ```shell
@@ -4411,7 +4342,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
     "previous_page": 0
   }
 }
-```
+``` -->
 
 
 

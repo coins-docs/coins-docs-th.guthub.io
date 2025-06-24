@@ -3,28 +3,19 @@ title: "User-Data-Stream"
 ---
 
 
-# Change Log
-2025-03-25: update `Business Type (CHAIN_DEPOSIT, FIAT_DEPOSIT, TRADE, FEE, FIAT_WITHDRAWAL, CHAIN_WITHDRAWAL, CONVERT, DISTRIBUTION, P2P_TRANSFER, SPOT_TO_CREDIT, CREDIT_TO_SPOT, VIRTUAL_DISTRIBUTE, OTHERS)` to Balance Update endpoint
-
-2024-10-16: add `account email` and `busienss serial number` to Balance Update endpoint, add `account email` to Account Update endpoint.
-
-2024-07-29: add `Business Type` to Balance Update endpoint
-
-2023-07-15: update `balanceUpdate` trigger condition
-
-2022-08-19: add weight infomation for all interfaces
+# Change Log:
 
 
-# User Data Streams for Coins (2022-08-19)
+# User Data Streams for Coins (2025-06-19)
 
 ## General WSS information
 
-* The base endpoint is: **https://api.pro.coins.ph**
+* The base endpoint is: **https://api.pro.coins.th**
 * A User Data Stream `listenKey` is valid for 60 minutes after creation.
 * Doing a `PUT` on a `listenKey` will extend its validity for 60 minutes.
 * Doing a `DELETE` on a `listenKey` will close the stream and invalidate the listenKey.
 * Doing a `POST` on an account with an active `listenKey` will return the currently active `listenKey` and extend its validity for 60 minutes.
-* The base websocket endpoint is: **wss://wsapi.pro.coins.ph**
+* The base websocket endpoint is: **wss://wsapi.pro.coins.th**
 * User Data Streams are accessed at **/openapi/ws/\<listenKey\>**
 * A single connection to api endpoint is only valid for 24 hours; expect to be disconnected at the 24 hour mark
 
@@ -117,7 +108,7 @@ balance snapshot
       "l": "0.000000"             // Locked
     }
   ],
-  "em": "test@coins.ph"          // Account email,This parameter will only be provided when the master account is whitelisted and there has been a balance change on the sub-account.
+  "em": "test@coins.th"          // Account email,This parameter will only be provided when the master account is whitelisted and there has been a balance change on the sub-account.
 }
 ```
 
@@ -137,54 +128,7 @@ contains balance changed
   "d": "100.00000000",          // Balance Delta
   "T": 1573200697068,           // Clear Time
   "BS": "CHAIN_DEPOSIT",        // Business Type (CHAIN_DEPOSIT, FIAT_DEPOSIT, TRADE, FEE, FIAT_WITHDRAWAL, CHAIN_WITHDRAWAL, CONVERT, DISTRIBUTION, P2P_TRANSFER, SPOT_TO_CREDIT, CREDIT_TO_SPOT, VIRTUAL_DISTRIBUTE, OTHERS)
-  "em": "test@coins.ph",        // Account email,This parameter will only be provided when the master account is whitelisted and there has been a balance change on the sub-account.
+  "em": "test@coins.th",        // Account email,This parameter will only be provided when the master account is whitelisted and there has been a balance change on the sub-account.
   "BI": "123456789"             // Business serial number,This parameter will only be provided when the master account is whitelisted and there has been a balance change on the sub-account.
 }
 ```
-
-### Order Update
-
-Orders are updated with the `executionReport` event. Check the API documentation and below for relevant enum definitions.
-Average price can be found by doing `Z` divided by `z`.
-
-**Payload:**
-
-```javascript
-{
-  "e": "executionReport",        // Event type
-  "E": 1499405658658,            // Event time
-  "s": "ETHBTC",                 // Symbol
-  "c": "1000087761",             // Client order ID
-  "S": "BUY",                    // Side
-  "o": "LIMIT",                  // Order type
-  "f": "GTC",                    // Time in force
-  "q": "1.00000000",             // Order quantity
-  "p": "0.10264410",             // Order price
-  "P": "0.00000000",             // Stop price
-  "x": "NEW",                    // Current execution type
-  "X": "NEW",                    // Current order status
-  "r": "NONE",                   // Order reject reason
-  "i": 1241518645726809840,      // Order ID
-  "l": "0.00000000",             // Last executed quantity
-  "z": "0.00000000",             // Cumulative filled quantity
-  "L": "0.00000000",             // Last executed price
-  "n": "0",                      // Commission amount
-  "N": null,                     // Commission asset
-  "T": -1,                       // Transaction time
-  "t": -1,                    	 // Trade ID
-  "w": true,                     // Is the order on the book?
-  "m": false,                    // Is this trade the maker side?
-  "O": 1499405658657,            // Order creation time
-  "Z": "0.00000000"              // Cumulative quote asset transacted quantity
-  "Y": "0.00000000",             // Last quote asset transacted quantity (i.e. lastPrice * lastQty)
-  "Q": "0.00000000"              // Quote Order Qty
-}
-```
-
-**Execution types:**
-
-* NEW \- The order has been accepted into the engine.
-* CANCELED \- The order has been canceled by the user.
-* REJECTED  \- The order has been rejected and was not processed.
-* TRADE - Part of the order or all of the order's quantity has filled.
-* EXPIRED - The order was canceled according to the order type's rules (e.g. LIMIT FOK orders with no fill, LIMIT IOC or MARKET orders that partially fill) or by the exchange.
