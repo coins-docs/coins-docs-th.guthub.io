@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>本地 OCR 识别（Tesseract.js）</title>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.0.0/dist/tesseract.min.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    #preview { max-width: 300px; margin-top: 10px; }
+    textarea { width: 100%; height: 150px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2>📷 拍照识别包装文字</h2>
+  <input type="file" accept="image/*" capture="environment" id="imageInput">
+  <br>
+  <img id="preview" src="" alt="图片预览">
+  <textarea id="output" placeholder="识别结果将在这里显示..."></textarea>
+
+  <script>
+    const input = document.getElementById('imageInput');
+    const preview = document.getElementById('preview');
+    const output = document.getElementById('output');
+
+    input.addEventListener('change', async (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = async function (e) {
+        preview.src = e.target.result;
+        output.value = "识别中...请稍候...";
+
+        const result = await Tesseract.recognize(
+          e.target.result,
+          'chi_sim', // 简体中文语言包
+          {
+            logger: m => console.log(m)
+          }
+        );
+
+        output.value = result.data.text;
+      };
+      reader.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>
