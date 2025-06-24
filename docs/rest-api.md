@@ -251,99 +251,9 @@ Note that in Example 3, the signature is different from the previous examples. S
 
 These terms will be used throughout the documentation, so new users are encouraged to read them to help their understanding of the API.
 
-* `base asset` refers to the asset that is the `quantity` of a symbol. For the symbol BTCUSDT, BTC would be the `base asset`.
-* `quote asset` refers to the asset that is the `price` of a symbol. For the symbol BTCUSDT, USDT would be the `quote asset`.
+* `base asset` refers to the asset that is the `quantity` of a symbol. For the symbol BTCTHB, BTC would be the `base asset`.
+* `quote asset` refers to the asset that is the `price` of a symbol. For the symbol BTCTHB, THB would be the `quote asset`.
 
-
-
-### ENUM definitions
-
-<!-- **Symbol status:**
-
-* TRADING
-* BREAK (ongoing)
-* CANCEL_ONLY (ongoing)
-
-**Order status:**
-
-Status | Description
------------| --------------
-`NEW` | The order has been accepted by the engine.
-`PARTIALLY_FILLED`| A part of the order has been filled.
-`FILLED` | The order has been completed.
-`PARTIALLY_CANCELED` | A part of the order has been cancelled with self trade.
-`CANCELED` | The order has been canceled by the user
-`EXPIRED`       | The order has been cancelled by matching-engine: LIMIT FOK order not filled, limit order not fully filled etc 
-
-**Order types:**
-
-* LIMIT
-* MARKET
-* LIMIT_MAKER
-* STOP_LOSS
-* STOP_LOSS_LIMIT
-* TAKE_PROFIT
-* TAKE_PROFIT_LIMIT
-
-
-
-**Order Response Type (newOrderRespType):**
-
-* ACK
-
-* RESULT
-
-* FULL
-
-
-
-**Order side:**
-
-* BUY
-* SELL
-
-
-
-**Anti self-trading behaviour(stpFlag):**
-
-| Value | Description                                     |
-| ----- | ----------------------------------------------- |
-| `CB`  | Both orders will be cancelled by match engine   |
-| `CN`  | The new order will be cancelled by match engine |
-| `CO`  | The old order will be cancelled by match engine |
-
-
-
-**Time in force (timeInForce):**
-
-This sets how long an order will be active before expiration.
-
-Status | Description
------------| --------------
-`GTC` | Good Til Canceled <br> An order will be on the book unless the order is canceled.
-`IOC` | Immediate Or Cancel <br> An order will try to fill the order as much as it can before the order expires.
-`FOK`| Fill or Kill <br> An order will expire if the full order cannot be filled upon execution.
-
-**Kline/Candlestick chart intervals:**
-
-m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
-
-* 1m
-* 3m
-* 5m
-* 15m
-* 30m
-* 1h
-* 2h
-* 4h
-* 6h
-* 8h
-* 12h
-* 1d
-* 3d
-* 1w
-* 1M
- -->
 
 
 ### General endpoints
@@ -572,11 +482,11 @@ Fetch deposit history.
     {
         "id": "d_769800519366885376",
         "amount": "0.001",
-        "coin": "BNB",
-        "network": "BNB",
+        "coin": "BTC",
+        "network": "BTC",
         "status": 0,
-        "address": "bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23",
-        "addressTag": "101764890",
+        "address": "15g7UoRTVjAdUnHyRMCt4RrZ4m1Aib61rr",
+        "addressTag": "",
         "txId": "98A3EA560C6B3336D348B6C83F0F95ECE4F1F5919E94BD006E5BF3BF264FACFC",
         "insertTime": 1661493146000,
         "confirmNo": 10,
@@ -584,12 +494,12 @@ Fetch deposit history.
     {
         "id": "d_769754833590042625",
         "amount":"0.5",
-        "coin":"IOTA",
-        "network":"IOTA",
+        "coin":"ETH",
+        "network":"ETH",
         "status":1,
-        "address":"SIZ9VLMHWATXKV99LH99CIGFJFUMLEHGWVZVNNZXRJJVWBPHYWPPBOSDORZ9EQSHCZAMPVAPGFYQAUUV9DROOXJLNW",
+        "address":"0x386AE30AE2dA293987B5d51ddD03AEb70b21001F",
         "addressTag":"",
-        "txId":"ESBFVQUTPIWQNJSPXFNHNYHSQNTGKRVKPRABQWTAXCDWOAKDKYWPTVG9BGXNVNKTLEJGESAVXIKIZ9999",
+        "txId":"0x4ae2fed36a90aada978fc31c38488e8b60d7435cfe0b4daed842456b4771fcf7",
         "insertTime":1599620082000,
         "confirmNo": 20,
     }
