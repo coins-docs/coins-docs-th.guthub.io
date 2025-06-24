@@ -922,8 +922,6 @@ timestamp | LONG | YES |
 
 
 
-### Market Data endpoints
-
 <!-- #### Order book
 
 ```shell
