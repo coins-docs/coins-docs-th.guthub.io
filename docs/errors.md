@@ -1,11 +1,8 @@
 ---
 title: "Errors"
-permalink: /errors/
-layout: default
-nav: sidebar/errors.html
 
 ---
-# Error codes for Coins (2025-06-19)
+# Error codes for Coins (2024-04-30)
 
 Errors consist of two parts: an error code and a message. Codes are universal,
  but messages can vary. Here is the error JSON payload:
