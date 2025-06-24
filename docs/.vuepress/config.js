@@ -21,7 +21,6 @@ export default defineUserConfig({
 
     navbar: [
       { text: 'Rest API', link: '/rest-api' },
-      { text: 'Web Socket Streams', link: '/web-socket-streams' },
       { text: 'User Data Stream', link: '/user-data-stream' },
       { text: 'Errors', link: '/errors' }
     ],
@@ -31,7 +30,6 @@ export default defineUserConfig({
         text: 'API Documentation',
         children: [
           '/rest-api',
-          '/web-socket-streams',
           '/user-data-stream',
           '/errors'
         ]

@@ -7,9 +7,6 @@ actions:
   - text: Get Started with REST API
     link: /rest-api
     type: primary
-  - text: WebSocket Streams
-    link: /web-socket-streams
-    type: secondary
 features:
   - title: REST API
     details: Complete REST API documentation with endpoints for trading, account management, and more
@@ -38,9 +35,6 @@ onMounted(() => {
 
 ### 📚 [REST API Documentation](/rest-api)
 Complete guide to all REST API endpoints including authentication, trading, account management, and more.
-
-### 🔌 [WebSocket Streams](/web-socket-streams)
-Real-time market data, order book updates, and trade information via WebSocket connections.
 
 ### 👤 [User Data Stream](/user-data-stream)
 Private data streams for account information, order updates, and position changes.

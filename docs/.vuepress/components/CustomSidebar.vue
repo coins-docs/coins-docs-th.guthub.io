@@ -99,7 +99,6 @@ const isScrollingToHeader = ref(false) // 控制是否正在滚动到指定标�
 // 页面标题映射
 const pageTitleMap = {
   '/': '首页',
-  '/web-socket-streams': 'WebSocket 流',
   '/user-data-stream': '用户数据流',
   '/errors': '错误代码'
 }
@@ -108,7 +107,6 @@ const pageTitleMap = {
 const pageIconMap = {
   '/': '🏠',
   '/rest-api': '📡',
-  '/web-socket-streams': '🔗',
   '/user-data-stream': '👤',
   '/errors': '⚠️'
 }
@@ -141,7 +139,6 @@ const sidebarPages = computed(() => {
   if (!sidebar.length) {
     return [
       { link: '/', text: '首页' },
-      { link: '/web-socket-streams', text: 'WebSocket 流' },
       { link: '/user-data-stream', text: '用户数据流' },
       { link: '/errors', text: '错误代码' }
     ]
@@ -443,7 +440,6 @@ const performSearch = async () => {
   const predefinedPages = [
     { path: '/', title: '首页' },
     { path: '/rest-api', title: 'Rest API' },
-    { path: '/web-socket-streams', title: 'Web Socket Streams' },
     { path: '/user-data-stream', title: 'User Data Stream' },
     { path: '/errors', title: 'Errors' }
   ]
