@@ -4,7 +4,7 @@ import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
   lang: 'en-US',
-  base: '/doc-test/',
+  base: '/',
 
   title: 'Coins APIs',
   description: 'Coins.ph APIs Documentation',
