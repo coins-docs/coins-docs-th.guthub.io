@@ -197,53 +197,53 @@ timestamp | 1538323200000
 
 ```shell
 [linux]$ echo -n "symbol=BTCTHB&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
-(stdin)= d7b09aa959094bafd1de10be3985651691fff6cc04b5cd94aea8cc1ca02e0ed8
+(stdin)= 886ed92e5e0c36de74b4765dbd70606c8f99da9515fd958e033c574930d7db32
 ``` -->
 
 <!-- * **curl command:**
 
 ```shell
 (HMAC SHA256)
-[linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/v1/order?symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000&signature=d7b09aa959094bafd1de10be3985651691fff6cc04b5cd94aea8cc1ca02e0ed8'
+[linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/v1/order?symbol=BTCTHB&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000&signature=886ed92e5e0c36de74b4765dbd70606c8f99da9515fd958e033c574930d7db32'
 ``` -->
 
 
 
 <!-- #### Example 2: As a request body
 
-* **requestBody:** symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000
+* **requestBody:** symbol=BTCTHB&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000
 * **HMAC SHA256 signature:**
 
 ```shell
-[linux]$ echo -n "symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
-(stdin)= d7b09aa959094bafd1de10be3985651691fff6cc04b5cd94aea8cc1ca02e0ed8 -->
+[linux]$ echo -n "symbol=BTCTHB&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
+(stdin)= 886ed92e5e0c36de74b4765dbd70606c8f99da9515fd958e033c574930d7db32 -->
 <!-- ```
 
 * **curl command:**
 
 ```shell
 (HMAC SHA256)
-[linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/v1/order' -d 'symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000&signature=d7b09aa959094bafd1de10be3985651691fff6cc04b5cd94aea8cc1ca02e0ed8'
+[linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/v1/order' -d 'symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000&signature=886ed92e5e0c36de74b4765dbd70606c8f99da9515fd958e033c574930d7db32'
 ```
 
 
 
 #### Example 3: Mixed query string and request body
 
-* **queryString:** symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC
+* **queryString:** symbol=BTCTHB&side=BUY&type=LIMIT&timeInForce=GTC
 * **requestBody:** quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000
 * **HMAC SHA256 signature:**
 
 ```shell
-[linux]$ echo -n "symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTCquantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
-(stdin)= 340037ed5366e650bd0e09e170db4a6ace0a9cba3e8af4e5c37ba2143fb84de0
+[linux]$ echo -n "symbol=BTCTHB&side=BUY&type=LIMIT&timeInForce=GTCquantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
+(stdin)= 297d3c1fb80358d5d0b5a3d89aabc13039a3820053bc07248b28d41b0596c73e
 ```
 
 * **curl command:**
 
 ```shell
 (HMAC SHA256)
-[linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/v1/order?symbol=BTCPHP&side=BUY&type=LIMIT&timeInForce=GTC' -d 'quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000&signature=340037ed5366e650bd0e09e170db4a6ace0a9cba3e8af4e5c37ba2143fb84de0'
+[linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/v1/order?symbol=BTCTHB&side=BUY&type=LIMIT&timeInForce=GTC' -d 'quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000&signature=297d3c1fb80358d5d0b5a3d89aabc13039a3820053bc07248b28d41b0596c73e'
 ```
 
 Note that in Example 3, the signature is different from the previous examples. Specifically, there should be no `&` character between `GTC` and `quantity=1`. -->
