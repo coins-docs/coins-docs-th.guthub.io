@@ -179,12 +179,8 @@ secretKey | lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76
 
 Parameter | Value
 ------------ | ------------
-symbol | BTCTHB
-side | BUY
-type | LIMIT
-timeInForce | GTC
-quantity | 1
-price | 0.1
+sourceCurrency | BTC
+targetCurrency | THB
 recvWindow | 5000
 timestamp | 1538323200000
 
@@ -192,19 +188,19 @@ timestamp | 1538323200000
 
 #### Example 1: As a query string
 
-* **queryString:** symbol=BTCTHB&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000
+* **queryString:** sourceCurrency=BTC&targetCurrency=THB&recvWindow=5000&timestamp=1538323200000
 * **HMAC SHA256 signature:**
 
 ```shell
-[linux]$ echo -n "symbol=BTCTHB&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
-(stdin)= 886ed92e5e0c36de74b4765dbd70606c8f99da9515fd958e033c574930d7db32
+[linux]$ echo -n "sourceCurrency=BTC&targetCurrency=THB&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
+(stdin)= 6a2cfc4f792ff338ed413ec2197540b46fead0e43c143eb5d04992a4d7d6622d
 ``` -->
 
 <!-- * **curl command:**
 
 ```shell
 (HMAC SHA256)
-[linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/v1/order?symbol=BTCTHB&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1538323200000&signature=886ed92e5e0c36de74b4765dbd70606c8f99da9515fd958e033c574930d7db32'
+[linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/convert/v1/get-quote?sourceCurrency=BTC&targetCurrency=THB&recvWindow=5000&timestamp=1538323200000&signature=6a2cfc4f792ff338ed413ec2197540b46fead0e43c143eb5d04992a4d7d6622d'
 ``` -->
 
 
