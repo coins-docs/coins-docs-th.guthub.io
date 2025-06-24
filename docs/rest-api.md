@@ -594,7 +594,7 @@ This endpoint is used to transfer funds between two accounts.
 Name       | Type  | Mandatory | Description
 -----------------|--------|-----------|--------------------------------------------------------------------------------------
 client_transfer_id | STRING | NO | Client Transfer ID, cannot send duplicate ID
-account      | STRING | YES    | Either the token (e.g. PHP, BTC, ETH) or the Balance ID (e.g. `1447779051242545455`) to be transferred.
+account      | STRING | YES    | Either the token (e.g. THB, BTC, ETH) or the Balance ID (e.g. `1447779051242545455`) to be transferred.
 target_address   | STRING | YES    | The phone number or email for recipient account (e.g. `+63 9686490252` or `testsub@gmail.com`)
 amount      | BigDecimal | YES    | The amount being transferred
 recvWindow | LONG  | NO    | This value cannot be greater than `60000`
@@ -646,7 +646,7 @@ Initiate a new payment transaction by creating a payment request.
 Name              | Type    | Mandatory | Description
 -----------------|---------|----------|--------------------------------------------------------------------------------------
 payer_contact_info            | STRING  | YES      | The contact information, typically an email address, to which the payment request should be sent.
-receiving_account | STRING  | YES      |  Either the token (e.g. PHP) or the Balance ID (e.g. 1447779051242545455 Refer to the id field in /openapi/account/v3/crypto-accounts.) to be transferred.
+receiving_account | STRING  | YES      |  Either the token (e.g. THB) or the Balance ID (e.g. 1447779051242545455 Refer to the id field in /openapi/account/v3/crypto-accounts.) to be transferred.
 amount          | DECIMAL | YES      |  The requested amount to be transferred to the requestor's receiving_account.
 message          | STRING  | YES      | An arbitrary message that will be attached to the payment request.
 supported_payment_collectors          | STRING  | NO       | Methods of payment that are available to a user when they view a payment request, optional items `coins_peso_wallet,CEBL,MLH,PLWN`,  e.g. `["coins_peso_wallet"]` or `["coins_peso_wallet","CEBL","MLH","PLWN"]`. Note: when a payment method is closed, it will be unavailable. 
@@ -663,7 +663,7 @@ timestamp          | LONG    | YES        |
         "id": "1433341829953096704",
         "invoice": "1433341829953096704",
         "amount": "20",
-        "currency": "PHP",
+        "currency": "THB",
         "status": "pending",//pending,fully_paid,expired,canceled
         "created_at": "1685603661217",
         "updated_at": "1685603661217",
@@ -704,22 +704,17 @@ timestamp | LONG | YES |
    "canWithdraw":true,
    "balances":[
       {
-         "asset":"456",
-         "free":"100",
+         "asset":"ETH",
+         "free":"0.1",
          "locked":"0"
       },
       {
-         "asset":"APE",
-         "free":"0",
-         "locked":"0"
-      },
-      {
-         "asset":"AXS",
+         "asset":"BTC",
          "free":"0.00005",
          "locked":"0"
       }
    ],
-   "token":"PHP",
+   "token":"THB",
    "daily":{
       "cashInLimit":"500000",
       "cashInRemaining":"499994",
@@ -1004,7 +999,7 @@ symbols | STRING | NO |
 
 ```javascript
 {
-  "symbol": "LTCBTC",
+  "symbol": "ETHTHB",
   "price": "4.00000200"
 }
 ```
@@ -1014,11 +1009,11 @@ OR
 ```javascript
 [
   {
-    "symbol": "LTCBTC",
+    "symbol": "ETHTHB",
     "price": "4.00000200"
   },
   {
-    "symbol": "BTCPHP",
+    "symbol": "BTCTHB",
     "price": "0.07946600"
   }
 ]
