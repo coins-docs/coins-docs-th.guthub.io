@@ -6,7 +6,7 @@ layout: default
 ---
 
 
-# Change Log
+# Change Log:
 
 
 # User Data Streams for Coins (2025-06-19)
