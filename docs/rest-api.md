@@ -13,7 +13,7 @@ title: "Rest-Api"
 
 ## General API Information
 
-* The base endpoint is: **https://api.pro.coins.th**
+* The base endpoint is: **https://api.coins.co.th**
 * All endpoints return data in either a JSON object or array format.
 * Data is returned in **ascending** order, with the oldest records appearing first and the newest records appearing last.
 * All time and timestamp related fields are expressed in milliseconds.
