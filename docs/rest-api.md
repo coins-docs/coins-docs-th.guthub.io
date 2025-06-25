@@ -832,11 +832,11 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
     "previous_page": 0
   }
 }
-
-
+```
 
 ### Convert endpoints
 #### Get supported trading pairs (TRADE)
+
 ```shell
 POST /openapi/convert/v1/get-supported-trading-pairs
 ```
