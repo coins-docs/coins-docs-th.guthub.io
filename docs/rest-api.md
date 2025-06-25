@@ -607,7 +607,7 @@ If the client_transfer_id or id parameter is passed in, the type parameter is in
 ```javascript
 {
   "account": "1451431230880900352",
-  "target_address": "christina@coins.ph",
+  "target_address": "christina@gmail.com",
   "amount": "1232"
 }
 ```
