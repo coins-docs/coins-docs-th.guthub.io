@@ -345,34 +345,289 @@ timestamp | LONG | YES |
 
 ```javascript
 [
-    {
-        "coin": "ETH",
-        "name": "ETH",
-        "depositAllEnable": true,
-        "withdrawAllEnable": true,
-        "free": "1.9144",
-        "locked": "0.0426",
-        "networkList": [
-            {
-                "addressRegex": "0x([0-9a-fA-F]){40}",
-                "memoRegex": "^[0-9A-Za-z\\-_]{1,120}$",
-                "network": "ETH",
-                "name": "ERC20",
-                "depositEnable": true,
-                "minConfirm": 8,
-                "unLockConfirm": 12,
-                "withdrawDesc": "1234567890",
-                "withdrawEnable": true,
-                "withdrawFee": "0",
-                "withdrawIntegerMultiple": "0.00000001",
-                "withdrawMax": "1",
-                "withdrawMin": "0.001",
-                "sameAddress": false
-            }
-        ],
-        "legalMoney": false
-    }
-  ]
+  {
+    "coin": "THB",
+    "depositAllEnable": false,
+    "free": "161.61",
+    "legalMoney": true,
+    "locked": "0",
+    "name": "THB",
+    "networkList": [],
+    "transferMinQuantity": "0",
+    "transferPrecision": 2,
+    "withdrawAllEnable": false
+  },
+  {
+    "coin": "USDT",
+    "depositAllEnable": true,
+    "free": "19.085339",
+    "legalMoney": false,
+    "locked": "0",
+    "name": "USDT",
+    "networkList": [
+      {
+        "addressRegex": "^0x[0-9a-fA-F]{40}$",
+        "depositEnable": true,
+        "memoRegex": " ",
+        "minConfirm": 12,
+        "name": "Ethereum (ERC20)",
+        "network": "ETH",
+        "sameAddress": false,
+        "unLockConfirm": -1,
+        "withdrawDesc": "",
+        "withdrawEnable": true,
+        "withdrawFee": "7",
+        "withdrawIntegerMultiple": "0.000001",
+        "withdrawMax": "500000",
+        "withdrawMin": "10"
+      },
+      {
+        "addressRegex": "^T[0-9a-zA-Z]{33}$",
+        "depositEnable": true,
+        "memoRegex": "",
+        "minConfirm": 19,
+        "name": "TRON",
+        "network": "TRX",
+        "sameAddress": false,
+        "unLockConfirm": -1,
+        "withdrawDesc": "",
+        "withdrawEnable": true,
+        "withdrawFee": "5",
+        "withdrawIntegerMultiple": "0.000001",
+        "withdrawMax": "1000000",
+        "withdrawMin": "20"
+      },
+      {
+        "addressRegex": "^0x[0-9a-fA-F]{40}$",
+        "depositEnable": true,
+        "memoRegex": "",
+        "minConfirm": 15,
+        "name": "BNB Smart Chain (BEP20)",
+        "network": "BSC",
+        "sameAddress": false,
+        "unLockConfirm": -1,
+        "withdrawDesc": "",
+        "withdrawEnable": true,
+        "withdrawFee": "1",
+        "withdrawIntegerMultiple": "0.000001",
+        "withdrawMax": "300000",
+        "withdrawMin": "10"
+      },
+      {
+        "addressRegex": "^0x[0-9a-fA-F]{40}$",
+        "depositEnable": false,
+        "memoRegex": "",
+        "minConfirm": 200,
+        "name": "Polygon",
+        "network": "POL",
+        "sameAddress": false,
+        "unLockConfirm": 300,
+        "withdrawDesc": "",
+        "withdrawEnable": false,
+        "withdrawFee": "2",
+        "withdrawIntegerMultiple": "0.000001",
+        "withdrawMax": "70000",
+        "withdrawMin": "10"
+      }
+    ],
+    "transferMinQuantity": "0",
+    "transferPrecision": 8,
+    "withdrawAllEnable": true
+  },
+  {
+    "coin": "BCH",
+    "depositAllEnable": true,
+    "free": "0",
+    "legalMoney": false,
+    "locked": "0",
+    "name": "BCH",
+    "networkList": [
+      {
+        "addressRegex": "^[1,3][a-km-zA-HJ-NP-Z1-9]{25,34}$|^[0-9a-z]{42,42}$",
+        "depositEnable": true,
+        "memoRegex": "",
+        "minConfirm": 1,
+        "name": "Bitcoin Cash",
+        "network": "BCH",
+        "sameAddress": false,
+        "unLockConfirm": -1,
+        "withdrawDesc": "",
+        "withdrawEnable": true,
+        "withdrawFee": "0.001",
+        "withdrawIntegerMultiple": "0.00000001",
+        "withdrawMax": "50",
+        "withdrawMin": "0.01"
+      }
+    ],
+    "transferMinQuantity": "0",
+    "transferPrecision": 8,
+    "withdrawAllEnable": true
+  },
+  {
+    "coin": "BTC",
+    "depositAllEnable": true,
+    "free": "0",
+    "legalMoney": false,
+    "locked": "0",
+    "name": "BTC",
+    "networkList": [
+      {
+        "addressRegex": "^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$|^(bc1)[0-9A-Za-z]{39,59}$",
+        "depositEnable": true,
+        "memoRegex": "",
+        "minConfirm": 1,
+        "name": "Bitcoin",
+        "network": "BTC",
+        "sameAddress": false,
+        "unLockConfirm": 2,
+        "withdrawDesc": "",
+        "withdrawEnable": true,
+        "withdrawFee": "0.00009",
+        "withdrawIntegerMultiple": "0.00000001",
+        "withdrawMax": "5",
+        "withdrawMin": "0.0005"
+      }
+    ],
+    "transferMinQuantity": "0",
+    "transferPrecision": 8,
+    "withdrawAllEnable": true
+  },
+  {
+    "coin": "ETH",
+    "depositAllEnable": true,
+    "free": "0",
+    "legalMoney": false,
+    "locked": "0",
+    "name": "ETH",
+    "networkList": [
+      {
+        "addressRegex": "^0x[0-9a-fA-F]{40}$",
+        "depositEnable": true,
+        "memoRegex": " ",
+        "minConfirm": 12,
+        "name": "Ethereum (ERC20)",
+        "network": "ETH",
+        "sameAddress": false,
+        "unLockConfirm": -1,
+        "withdrawDesc": "",
+        "withdrawEnable": true,
+        "withdrawFee": "0.0017",
+        "withdrawIntegerMultiple": "0.00000001",
+        "withdrawMax": "50",
+        "withdrawMin": "0.01"
+      },
+      {
+        "addressRegex": "^0x[0-9a-fA-F]{40}$",
+        "depositEnable": true,
+        "memoRegex": "",
+        "minConfirm": 12,
+        "name": "Arbitrum One",
+        "network": "ARBITRUM",
+        "sameAddress": false,
+        "unLockConfirm": -1,
+        "withdrawDesc": "",
+        "withdrawEnable": true,
+        "withdrawFee": "0.0003",
+        "withdrawIntegerMultiple": "0.00000001",
+        "withdrawMax": "30",
+        "withdrawMin": "0.001"
+      }
+    ],
+    "transferMinQuantity": "0",
+    "transferPrecision": 8,
+    "withdrawAllEnable": true
+  },
+  {
+    "coin": "USDC",
+    "depositAllEnable": true,
+    "free": "0",
+    "legalMoney": false,
+    "locked": "0",
+    "name": "USDC",
+    "networkList": [
+      {
+        "addressRegex": "^0x[0-9a-fA-F]{40}$",
+        "depositEnable": true,
+        "memoRegex": " ",
+        "minConfirm": 12,
+        "name": "Ethereum (ERC20)",
+        "network": "ETH",
+        "sameAddress": false,
+        "unLockConfirm": -1,
+        "withdrawDesc": "",
+        "withdrawEnable": true,
+        "withdrawFee": "7.5",
+        "withdrawIntegerMultiple": "0.000001",
+        "withdrawMax": "500000",
+        "withdrawMin": "5"
+      },
+      {
+        "addressRegex": "^0x[0-9a-fA-F]{40}$",
+        "depositEnable": true,
+        "memoRegex": "",
+        "minConfirm": 15,
+        "name": "BNB Smart Chain (BEP20)",
+        "network": "BSC",
+        "sameAddress": false,
+        "unLockConfirm": -1,
+        "withdrawDesc": "",
+        "withdrawEnable": true,
+        "withdrawFee": "1",
+        "withdrawIntegerMultiple": "0.000001",
+        "withdrawMax": "300000",
+        "withdrawMin": "10"
+      },
+      {
+        "addressRegex": "^0x[0-9a-fA-F]{40}$",
+        "depositEnable": false,
+        "memoRegex": "",
+        "minConfirm": 200,
+        "name": "Polygon",
+        "network": "POL",
+        "sameAddress": false,
+        "unLockConfirm": 300,
+        "withdrawDesc": "",
+        "withdrawEnable": false,
+        "withdrawFee": "1",
+        "withdrawIntegerMultiple": "0.000001",
+        "withdrawMax": "30000",
+        "withdrawMin": "10"
+      }
+    ],
+    "transferMinQuantity": "0",
+    "transferPrecision": 8,
+    "withdrawAllEnable": true
+  },
+  {
+    "coin": "XRP",
+    "depositAllEnable": true,
+    "free": "0",
+    "legalMoney": false,
+    "locked": "0",
+    "name": "XRP",
+    "networkList": [
+      {
+        "addressRegex": "^r[0-9a-zA-Z]{24,34}$",
+        "depositEnable": true,
+        "memoRegex": "[0-9]{1,10}",
+        "minConfirm": 1,
+        "name": "Ripple",
+        "network": "XRP",
+        "sameAddress": true,
+        "unLockConfirm": 1,
+        "withdrawDesc": "",
+        "withdrawEnable": true,
+        "withdrawFee": "0.3",
+        "withdrawIntegerMultiple": "0.000001",
+        "withdrawMax": "100000",
+        "withdrawMin": "10"
+      }
+    ],
+    "transferMinQuantity": "0",
+    "transferPrecision": 6,
+    "withdrawAllEnable": true
+  }
+]
 ```
 
 
