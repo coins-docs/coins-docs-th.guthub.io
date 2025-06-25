@@ -1143,9 +1143,9 @@ listenKey | STRING | YES |
 
 
 
-## Sub-account endpoints
+### Sub-account endpoints
 
-### Query Sub-account List (For Master Account)
+#### Query Sub-account List (For Master Account)
 
 Applies to master accounts only.
 
