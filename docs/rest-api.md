@@ -194,14 +194,14 @@ timestamp | 1538323200000
 ```shell
 [linux]$ echo -n "sourceCurrency=BTC&targetCurrency=THB&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
 (stdin)= 6a2cfc4f792ff338ed413ec2197540b46fead0e43c143eb5d04992a4d7d6622d
-``` -->
+``` 
 
-<!-- * **curl command:**
+* **curl command:**
 
 ```shell
 (HMAC SHA256)
 [linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/convert/v1/get-quote?sourceCurrency=BTC&targetCurrency=THB&recvWindow=5000&timestamp=1538323200000&signature=6a2cfc4f792ff338ed413ec2197540b46fead0e43c143eb5d04992a4d7d6622d'
-``` -->
+```
 
 
 
@@ -1856,108 +1856,6 @@ size | INT   | NO        |  Page size (default:100,max:100)
 ]
 ```
  Collection Task Status: `INIT`, `SUCCESS`, `PARTIAL_SUCCESS`, `PROCESSING`,`FAILED`
-
-<!-- #### Get payment request (USER_DATA)
-
-```shell
-GET /openapi/v3/payment-request/get-payment-request (HMAC SHA256)
-```
-Retrieve either a single existing payment request or a list of existing payment requests.
-
-**Weight:** 1
-
-**Parameters:**
-
-Name              | Type   | Mandatory | Description
------------------|--------|-----------|--------------------------------------------------------------------------------------
-id            | STRING | NO        | The ID of a specific payment request to retrieve.
-start_time | LONG   | NO        |  The start time of a time range within which to search for payment requests.
-end_time          | LONG   | NO       |  The end time of a time range within which to search for payment requests.
-limit          | INT    | NO       | The maximum number of records to return in a single response. The default value is 500, and the maximum allowed value is 1000.
-recvWindow | LONG   | NO        | The value cannot be greater than `60000`
-timestamp          | LONG   | YES        |
-
-**Response:**
-
-```javascript
-{
-    "payment-request": {
-        "message": "i am boss",
-        "id": "1433341829953096704",
-        "invoice": "1433341829953096704",
-        "amount": "20",
-        "currency": "PHP",
-        "status": "pending",//pending,fully_paid,expired,canceled
-        "created_at": "1685603661217",
-        "updated_at": "1685603661217",
-        "expires_at": "1686208461219",
-        "supported_payment_collectors": "[\"coins_peso_wallet\"]",
-        "payment_url": "https://www.pro.coins.ph/payment/invoice/1433341829953096704",
-        "payer_contact_info": "jennins@coins.ph"
-    }
-}
-```
-
-#### Cancel payment request (USER_DATA)
-
-```shell
-POST /openapi/v3/payment-request/delete-payment-request (HMAC SHA256)
-```
-Cancel an existing payment request.
-
-**Weight:** 1
-
-**Parameters:**
-
-Name              | Type   | Mandatory | Description
------------------|--------|-----------|--------------------------------------------------------------------------------------
-id            | STRING | YES       | The ID the payment request that needs to be canceled.
-recvWindow | LONG   | NO        | The value cannot be greater than `60000`
-timestamp          | LONG   | YES        |
-
-**Response:**
-
-```javascript
-{
-    "payment-request": {
-        "message": "i am boss",
-        "id": "1433341829953096704",
-        "invoice": "1433341829953096704",
-        "amount": "20",
-        "currency": "PHP",
-        "status": "canceled",//pending,fully_paid,expired,canceled
-        "created_at": "1685603661217",
-        "updated_at": "1685603661217",
-        "expires_at": "1686208461219",
-        "supported_payment_collectors": "[\"coins_peso_wallet\"]",
-        "payment_url": "https://www.pro.coins.ph/payment/invoice/1433341829953096704",
-        "payer_contact_info": "jennins@coins.ph"
-    }
-}
-```
-
-#### Send reminder for payment request (USER_DATA)
-
-```shell
-POST /openapi/v3/payment-request/payment-request-reminder (HMAC SHA256)
-```
-Send a reminder to the recipient to fulfill the payment request.
-
-**Weight:** 1
-
-**Parameters:**
-
-Name              | Type   | Mandatory | Description
------------------|--------|-----------|--------------------------------------------------------------------------------------
-id            | STRING | YES       | The ID of the payment request for which the reminder notification needs to be sent.
-recvWindow | LONG   | NO        | The value cannot be greater than `60000`
-timestamp          | LONG   | YES        |
-
-**Response:**
-
-```javascript
-true
-``` -->
 
 
 
