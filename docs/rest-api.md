@@ -212,7 +212,7 @@ timestamp | 1538323200000
 
 ```shell
 [linux]$ echo -n "sourceCurrency=BTC&targetCurrency=THB&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
-(stdin)= 6a2cfc4f792ff338ed413ec2197540b46fead0e43c143eb5d04992a4d7d6622d -->
+(stdin)= 6a2cfc4f792ff338ed413ec2197540b46fead0e43c143eb5d04992a4d7d6622d
 ```
 
 * **curl command:**
@@ -242,7 +242,7 @@ timestamp | 1538323200000
 [linux]$ curl -H "X-COINS-APIKEY: tAQfOrPIZAhym0qHISRt8EFvxPemdBm5j5WMlkm3Ke9aFp0EGWC2CGM8GHV4kCYW" -X POST 'https://$HOST/openapi/convert/v1/get-quote?sourceCurrency=BTC&targetCurrency=THB' -d 'recvWindow=5000&timestamp=1538323200000&signature=ce922a44572e6433789c78f525738379ea0052551e4d65c1771ce8059c902b42'
 ```
 
-Note that in Example 3, the signature is different from the previous examples. Specifically, there should be no `&` character between `THB` and `recvWindow=5000`. -->
+Note that in Example 3, the signature is different from the previous examples. Specifically, there should be no `&` character between `THB` and `recvWindow=5000`.
 
 
 ## Public API Endpoints
