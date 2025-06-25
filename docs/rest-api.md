@@ -1059,21 +1059,29 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 **Response:**
 ```json
  {
-  "transfers": [
-    {
-      "txId": "2309rjw0amf0sq9me0gmadsmfoa",
-      "bizSubject": "CHAIN_WITHDRAWAL",
-      "tokenId": "BTC",
-      "status": "success",
-      "changed": "1",
-      "time": "1742896126999"
-    }
-  ],
   "meta": {
-    "has_next": true,
+    "has_next": false,
     "next_page": 2,
     "previous_page": 0
-  }
+  },
+  "transactions": [
+    {
+      "bizSubject": "CONVERT",
+      "changed": "-5",
+      "status": "SUCCESS",
+      "time": "1750838429677",
+      "tokenId": "USDT",
+      "txId": "19805707243820006402convert"
+    },
+    {
+      "bizSubject": "CHAIN_DEPOSIT",
+      "changed": "24.085339",
+      "status": "SUCCESS",
+      "time": "1750838101994",
+      "tokenId": "USDT",
+      "txId": "d_250625000011140125"
+    }
+  ]
 }
 ```
 
