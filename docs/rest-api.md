@@ -1550,3 +1550,143 @@ size | INT   | NO        |  Page size (default:100,max:100)
  Collection Task Status: `INIT`, `SUCCESS`, `PARTIAL_SUCCESS`, `PROCESSING`,`FAILED`
 
 
+
+#### Query balance (USER_DATA)
+
+```shell
+GET /openapi/account/v3/crypto-accounts
+```
+
+This endpoint allows users to retrieve their current account balance.
+
+**Weight:** 1
+**Parameters:**
+
+Name       | Type  | Mandatory | Description
+-----------------|--------|-----------|--------------------------------------------
+currency      | STRING | NO    | The currency for which the balance is being queried.
+recvWindow | LONG  | YES    | This value cannot be greater than `60000`
+timestamp     | LONG  | YES    | A point in time for which the balance is being queried.
+
+**Response:**
+```javascript
+ {
+  "crypto-accounts": [
+    {
+      "id": "1451431230880900352",
+      "name": "name",
+      "currency": "PBTC",
+      "balance": "100",
+      "pending_balance": "200"
+    }
+  ]
+}
+```
+
+
+
+#### Query transfers (USER_DATA)
+
+```shell
+GET /openapi/transfer/v3/transfers/{id}
+```
+If an ID is provided, this endpoint retrieves an existing transfer record; otherwise, it returns a paginated list of transfers.
+
+**Weight:** 10
+
+**Parameters:**
+
+Name       | Type  | Mandatory | Description
+-----------------|--------|-----------|--------------------------------------------------------------------------------------
+id      | STRING | NO    | ID of the transfer record
+client_transfer_id| STRING | NO | Client Transfer ID, Maximum length 100
+page    | INT | NO | Current page, default is `1`
+per_page    | INT | NO | Quantity per page, default 2000, maximum `2000`
+from_address |STRING|NO| The phone number or email for sender account (e.g. +63 9686490252 or testsub@gmail.com)
+to_address  |STRING|NO| The phone number or email for recipient account (e.g. +63 9686490252 or testsub@gmail.com)
+recvWindow | LONG  | YES    | This value cannot be greater than `60000`
+timestamp     | LONG  | YES    | A point in time for which transfers are being queried.
+
+- If client_transfer_id both the id and  parameters are passed, the id parameter will take precedence.
+- If the client_transfer_id or id parameter is passed, then the client_transfer_id or id takes precedence.
+- The from_address and to_address parameters cannot be passed simultaneously.
+
+**Response:**
+```json
+ {
+  "transfers": [
+    {
+      "id": "2309rjw0amf0sq9me0gmadsmfoa",
+      "client_transfer_id": "1487573639841995270",
+      "account": "90dfg03goamdf02fs",
+      "amount": "1",
+      "fee_amount": "0",
+      "currency": "PBTC",
+      "sourceAddress": "test1@gmail.com",
+      "target_address": "test2@gmail.com",
+      "payment": "23094j0amd0fmag9agjgasd",
+      "type": 2,//2:transfer out,1:transfer in
+      "status": "success",
+      "message": "example",
+      "created_at": "2019-07-04T03:28:50.531599Z"
+    }
+  ],
+  "meta": {
+    "total_count": 0,
+    "next_page": 2,
+    "previous_page": 0
+  }
+}
+```
+
+
+
+### Note
+
+### Request Parameters
+
+- Email address should be encoded. e.g. test@gmail.com should be encoded into test%40gmail.com
+
+
+
+#### Query transaction history (USER_DATA)
+
+```shell
+GET /openapi/v1/asset/transaction/history
+```
+
+**Weight:** 10
+
+**Parameters:**
+
+Name       | Type  | Mandatory | Description
+-----------------|--------|-----------|--------------------------------------------------------------------------------------
+tokenId      | STRING | YES       | The token to retrieve data for. Example: “tokenId”: “BTC”
+startTime| LONG | NO        | Timestamp in milliseconds. Timespan between startTime and endTime cannot exceed 7 days. If only startTime is provided, returns data 7 days after.
+endTime| LONG | NO        | Timestamp in milliseconds. Timespan between startTime and endTime cannot exceed 7 days. If only endTime is provided, returns data 7 days before.
+subUserId    | LONG | NO        | UID of sub-account.
+pageNum    | INT | NO        | The current page number. Ranges from 1 - 1000, with default being 1.
+pageSize    | INT | NO        | Records per page. Ranges from 1 - 100, with default being 20.
+recvWindow | LONG  | NO         | To specify the number of milliseconds after timestamp the request is valid for. Must be less than 60000.
+timestamp     | LONG  | YES       | A point in time for which transfers are being queried. Unix timestamp format in milliseconds.
+
+**Response:**
+```json
+ {
+  "transfers": [
+    {
+      "txId": "2309rjw0amf0sq9me0gmadsmfoa",
+      "bizSubject": "CHAIN_WITHDRAWAL",
+      "tokenId": "BTC",
+      "status": "success",
+      "changed": "1",
+      "time": "1742896126999"
+    }
+  ],
+  "meta": {
+    "has_next": true,
+    "next_page": 2,
+    "previous_page": 0
+  }
+}
+```
