@@ -669,7 +669,7 @@ timestamp     | LONG  | YES    | A point in time for which transfers are being q
       "account": "90dfg03goamdf02fs",
       "amount": "1",
       "fee_amount": "0",
-      "currency": "PBTC",
+      "currency": "BTC",
       "sourceAddress": "test1@gmail.com",
       "target_address": "test2@gmail.com",
       "payment": "23094j0amd0fmag9agjgasd",
@@ -782,9 +782,9 @@ timestamp     | LONG  | YES    | A point in time for which the balance is being 
     {
       "id": "1451431230880900352",
       "name": "name",
-      "currency": "PBTC",
-      "balance": "100",
-      "pending_balance": "200"
+      "currency": "BTC",
+      "balance": "1",
+      "pending_balance": "2"
     }
   ]
 }
