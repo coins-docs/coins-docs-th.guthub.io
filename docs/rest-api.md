@@ -863,38 +863,94 @@ precision	| The level of precision in decimal places used.
 
 ```javascript
 {
-  "status":0, 
-  "error":"OK",
-  "data":[
-     {
-      "sourceCurrency":"THB",
-      "targetCurrency":"BTC",
-      "minSourceAmount":"1000",
-      "maxSourceAmount":"15000",
-      "precision":"2"
+  "data": [
+    {
+      "maxSourceAmount": "300000",
+      "minSourceAmount": "50",
+      "precision": "2",
+      "sourceCurrency": "THB",
+      "targetCurrency": "BTC"
     },
     {
-      "sourceCurrency":"BTC",
-      "targetCurrency":"THB",
-      "minSourceAmount":"0.0001",
-      "maxSourceAmount":"0.1",
-      "precision":"8"
+      "maxSourceAmount": "0.09493131",
+      "minSourceAmount": "0.00001294",
+      "precision": "8",
+      "sourceCurrency": "BTC",
+      "targetCurrency": "THB"
     },
     {
-      "sourceCurrency":"THB",
-      "targetCurrency":"ETH",
-      "minSourceAmount":"1000",
-      "maxSourceAmount":"18000",
-      "precision":"2"
+      "maxSourceAmount": "200000",
+      "minSourceAmount": "50",
+      "precision": "2",
+      "sourceCurrency": "THB",
+      "targetCurrency": "BCH"
     },
     {
-      "sourceCurrency":"ETH",
-      "targetCurrency":"THB",
-      "minSourceAmount":"0.003",
-      "maxSourceAmount":"4.2",
-      "precision":"8"
+      "maxSourceAmount": "13.9699",
+      "minSourceAmount": "0.0028",
+      "precision": "8",
+      "sourceCurrency": "BCH",
+      "targetCurrency": "THB"
+    },
+    {
+      "maxSourceAmount": "200000",
+      "minSourceAmount": "50",
+      "precision": "2",
+      "sourceCurrency": "THB",
+      "targetCurrency": "XRP"
+    },
+    {
+      "maxSourceAmount": "3088.38",
+      "minSourceAmount": "0.63",
+      "precision": "6",
+      "sourceCurrency": "XRP",
+      "targetCurrency": "THB"
+    },
+    {
+      "maxSourceAmount": "200000",
+      "minSourceAmount": "50",
+      "precision": "2",
+      "sourceCurrency": "THB",
+      "targetCurrency": "USDT"
+    },
+    {
+      "maxSourceAmount": "6749.29",
+      "minSourceAmount": "1.38",
+      "precision": "8",
+      "sourceCurrency": "USDT",
+      "targetCurrency": "THB"
+    },
+    {
+      "maxSourceAmount": "200000",
+      "minSourceAmount": "50",
+      "precision": "2",
+      "sourceCurrency": "THB",
+      "targetCurrency": "USDC"
+    },
+    {
+      "maxSourceAmount": "6752.67",
+      "minSourceAmount": "1.38",
+      "precision": "8",
+      "sourceCurrency": "USDC",
+      "targetCurrency": "THB"
+    },
+    {
+      "maxSourceAmount": "200000",
+      "minSourceAmount": "50",
+      "precision": "2",
+      "sourceCurrency": "THB",
+      "targetCurrency": "ETH"
+    },
+    {
+      "maxSourceAmount": "2.75970265",
+      "minSourceAmount": "0.00056448",
+      "precision": "8",
+      "sourceCurrency": "ETH",
+      "targetCurrency": "THB"
     }
-  ]
+  ],
+  "error": "OK",
+  "status": 0
 }
 ```
 
