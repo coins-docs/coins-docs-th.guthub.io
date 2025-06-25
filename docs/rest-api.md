@@ -138,7 +138,7 @@ MARKET_DATA | `X-COINS-APIKEY`                         | Endpoint requires sendi
 * The `signature` is **not case sensitive**.
 * `totalParams` is defined as the `query string` concatenated with the
   `request body`(exclude `signature` parameters and values If signature parameters are in both).
-* We recommend the use of the `query string` for GET requests and the `form request body` for POST requests. However, for Spot Trading APIs, we recommend using the `query string`.
+* We recommend the use of the `query string` for GET requests and the `form request body` for POST requests.
 
 
 
