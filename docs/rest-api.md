@@ -687,13 +687,7 @@ timestamp     | LONG  | YES    | A point in time for which transfers are being q
 }
 ```
 
-
-
-### Note
-
-### Request Parameters
-
-- Email address should be encoded. e.g. test@gmail.com should be encoded into test%40gmail.com
+* Please note Email address should be encoded. e.g. test@gmail.com should be encoded into test%40gmail.com
 
 
 
