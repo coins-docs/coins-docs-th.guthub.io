@@ -167,7 +167,7 @@ server.
 
 
 
-### SIGNED Endpoint Examples for POST /openapi/v1/order
+### SIGNED Endpoint Examples for POST /openapi/convert/v1/get-quote
 
 Here is a step-by-step example of how to send a valid signed payload from the
 Linux command line using `echo`, `openssl`, and `curl`:
