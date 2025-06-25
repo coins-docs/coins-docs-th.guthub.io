@@ -50,7 +50,7 @@ The following are lightweight libraries that work as connectors to the Coins pub
 
 Postman collections are available, and they are recommended for new users seeking a quick and easy start with the API.
 
-* Postman <a href="https://github.com/coins-docs/coins.th-api-postman">https://github.com/coins-docs/coins.th-api-postman</a> 
+* Postman <a href="https://github.com/coins-docs/coins.co.th-api-postman">https://github.com/coins-docs/coins.co.th-api-postman</a> 
 
 
 ## General Information on Endpoints
