@@ -137,19 +137,6 @@ Errors consist of two parts: an error code and a message. Codes are universal,
 
 * Unauthorized to operate this API.
 
-
-### -2010 NEW_ORDER_REJECTED
-
-* New order rejected.
-
-### -2011 CANCEL_REJECTED
-
-* CANCEL_REJECTED
-
-### -2013 NO_SUCH_ORDER
-
-* Order does not exist.
-
 ### -2015 API_KEY_NOT_ENABLE
 
 * API-key is not enabled.
@@ -168,41 +155,3 @@ Errors consist of two parts: an error code and a message. Codes are universal,
 ### -2019 API_KEY_TYPE_WRONG
 
 * API-key type is wrong.
-
-## Messages for -1010 BAD_REQUEST, -2010 NEW_ORDER_REJECTED and -2011 CANCEL_REJECTED
-
-This code is sent when an error has been returned by the matching engine.
-The following messages which will indicate the specific error:
-
-| Error message                                                | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| "Unknown order sent."                                        | The order (by either `orderId`, `clOrdId`, `origClOrdId`) could not be found |
-| "Duplicate order sent."                                      | The `clOrdId` is already in use                              |
-| "Market is closed."                                          | The symbol is not trading                                    |
-| "Account has insufficient balance for requested action."     | Not enough funds to complete the action                      |
-| "Market orders are not supported for this symbol."           | `MARKET` is not enabled on the symbol                        |
-| "Iceberg orders are not supported for this symbol."          | `icebergQty` is not enabled on the symbol                    |
-| "Stop loss orders are not supported for this symbol."        | `STOP_LOSS` is not enabled on the symbol                     |
-| "Stop loss limit orders are not supported for this symbol."  | `STOP_LOSS_LIMIT` is not enabled on the symbol               |
-| "Take profit orders are not supported for this symbol."      | `TAKE_PROFIT` is not enabled on the symbol                   |
-| "Take profit limit orders are not supported for this symbol." | `TAKE_PROFIT_LIMIT` is not enabled on the symbol             |
-| "Price* QTY is zero or less."                                | `price`* `quantity` is too low                               |
-| "IcebergQty exceeds QTY."                                    | `icebergQty` must be less than the order quantity            |
-| "This action disabled is on this account."                   | Contact customer support; some actions have been disabled on the account. |
-| "Unsupported order combination"                              | The `orderType`, `timeInForce`, `stopPrice`, and/or `icebergQty` combination isn't allowed. |
-| "Order would trigger immediately."                           | The order's stop price is not valid when compared to the last traded price. |
-| "Cancel order is invalid. Check origClOrdId and orderId."    | No `origClOrdId` or `orderId` was sent in.                   |
-| "Order would immediately match and take."                    | `LIMIT_MAKER` order type would immediately match and trade, and not be a pure maker order. |
-
-## -9xxx Filter failures
-
-| Error message                            | Description                                                  |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| "Filter failure: PRICE_FILTER"           | `price` is too high, too low, and/or not following the tick size rule for the symbol. |
-| "Filter failure: LOT_SIZE"               | `quantity` is too high, too low, and/or not following the step size rule for the symbol. |
-| "Filter failure: MIN_NOTIONAL"           | `price`* `quantity` is too low to be a valid order for the symbol. |
-| "Filter failure: MAX_NUM_ORDERS"         | Account has too many open orders on the symbol.              |
-| "Filter failure: MAX_ALGO_ORDERS"        | Account has too many open stop loss and/or take profit orders on the symbol. |
-| "Filter failure: BROKER_MAX_NUM_ORDERS"  | Account has too many open orders on the broker.              |
-| "Filter failure: BROKER_MAX_ALGO_ORDERS" | Account has too many open stop loss and/or take profit orders on the broker. |
-| "Filter failure: ICEBERG_PARTS"          | Iceberg order would break into too many parts; icebergQty is too small. |
