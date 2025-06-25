@@ -1037,29 +1037,26 @@ errorMessage	| Error message if order failed.
 
 ```javascript
 {
-  "status": 0,
-   "error": "OK",
-   "data": [
+  "data": [
     {
-      "id":"",
-      "orderId": "25a9b92bcd4d4b2598c8be97bc65b466",
-      "quoteId": "1ecce9a7265a4a329cce80de46e2c583",
-      "userId":"",
-      "sourceCurrency": "BTC",
-      "sourceCurrencyIcon":"",
-      "targetCurrency": "THB",
-      "targetCurrencyIcon":"",
-      "sourceAmount": "0.11",
-      "targetAmount": "4466.89275956",
-      "price": "40608.115996",
-      "status": "SUCCESS",
       "createdAt": "1750838429000",
       "errorCode": "",
       "errorMessage": "",
-      "inversePrice": "3306.115996"
+      "fee": "0",
+      "inversePrice": null,
+      "orderId": "19805707243820006402convert",
+      "price": "32.3229",
+      "quoteId": "19805707243820006402convert",
+      "sourceAmount": "5",
+      "sourceCurrency": "USDT",
+      "status": "SUCCESS",
+      "targetAmount": "161.61",
+      "targetCurrency": "THB"
     }
   ],
-  "total": 23
+  "error": "OK",
+  "status": 0,
+  "total": 1
 }
 ```
 
