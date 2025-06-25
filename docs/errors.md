@@ -2,7 +2,7 @@
 title: "Errors"
 
 ---
-# Error codes for Coins (2025-06-19)
+# Error codes for Coins (2025-06-20)
 
 Errors consist of two parts: an error code and a message. Codes are universal,
  but messages can vary. Here is the error JSON payload:
