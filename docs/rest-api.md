@@ -1612,7 +1612,8 @@ Fetch deposit history.
 ]
 ```
 
-#### Collect sub-account assets (For Master Account)
+### Collect sub-account assets (For Master Account)
+
 ```shell
 POST /openapi/v1/fund-collect/collect-from-sub-account
 ```
@@ -1649,7 +1650,7 @@ remark | LONG   | NO        |
 
 
 
-#### Retrieve asset collection records (USER_DATA)
+### Retrieve asset collection records (USER_DATA)
 
 ```shell
 GET /openapi/v1/fund-collect/get-fund-record
