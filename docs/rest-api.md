@@ -595,7 +595,7 @@ Name       | Type  | Mandatory | Description
 -----------------|--------|-----------|--------------------------------------------------------------------------------------
 client_transfer_id | STRING | NO | Client Transfer ID, cannot send duplicate ID
 account      | STRING | YES    | Either the token (e.g. THB, BTC, ETH) or the Balance ID (e.g. `1447779051242545455`) to be transferred.
-target_address   | STRING | YES    | The phone number or email for recipient account (e.g. `+63 9686490252` or `testsub@gmail.com`)
+target_address   | STRING | YES    | The phone number or email for recipient account (e.g. `+66 819876543` or `testsub@gmail.com`)
 amount      | BigDecimal | YES    | The amount being transferred
 recvWindow | LONG  | NO    | This value cannot be greater than `60000`
 timestamp     | LONG  | YES    | A point in time when the transfer is performed
@@ -650,8 +650,8 @@ id      | STRING | NO    | ID of the transfer record
 client_transfer_id| STRING | NO | Client Transfer ID, Maximum length 100
 page    | INT | NO | Current page, default is `1`
 per_page    | INT | NO | Quantity per page, default 2000, maximum `2000`
-from_address |STRING|NO| The phone number or email for sender account (e.g. +63 9686490252 or testsub@gmail.com)
-to_address  |STRING|NO| The phone number or email for recipient account (e.g. +63 9686490252 or testsub@gmail.com)
+from_address |STRING|NO| The phone number or email for sender account (e.g. +66 819876543 or testsub@gmail.com)
+to_address  |STRING|NO| The phone number or email for recipient account (e.g. +66 819876543 or testsub@gmail.com)
 recvWindow | LONG  | YES    | This value cannot be greater than `60000`
 timestamp     | LONG  | YES    | A point in time for which transfers are being queried.
 
