@@ -936,13 +936,13 @@ expiry	| Quote expire time seconds.
   "status": 0, 
   "error": "OK", 
   "data": {
-            "quoteId": "2182b4fc18ff4556a18332245dba75ea",
-            "sourceCurrency": "BTC",
+            "quoteId": "19805702457826526722convert",
+            "sourceCurrency": "USDT",
             "targetCurrency": "THB",
-            "sourceAmount": "0.1",
-            "price": "59999",             //1BTC=59999THB
-            "targetAmount": "5999",       //The amount of THB the user holds
-            "expiry": "10"
+            "sourceAmount": "5",
+            "price": "32.3229",             //1USDT=32.3229THB
+            "targetAmount": "161.61",       //The amount of THB the user holds
+            "expiry": "7"
   }
 }
 ```
