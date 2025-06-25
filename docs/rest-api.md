@@ -84,12 +84,12 @@ Postman collections are available, and they are recommended for new users seekin
 
 
 
-<!-- ### Order Rate Limits
+### Order Rate Limits
 
 * When the order count exceeds the limit, you will receive a 429 error without the `Retry-After` header.
 
 * The order rate limit is counted against each IP and UID.
- -->
+
 
 
 ### Websocket Limits
@@ -123,7 +123,7 @@ NONE | none                          | Endpoint can be accessed freely.
 TRADE| `X-COINS-APIKEY`、`signature`、`timestamp` | Endpoint requires sending a valid API Key and signature and timing security. 
 USER_DATA| `X-COINS-APIKEY`、`signature`、`timestamp`                         | Endpoint requires sending a valid API Key and signature and timing security.. 
 USER_STREAM | `X-COINS-APIKEY`                         | Endpoint requires sending a valid API Key.               
-<!-- MARKET_DATA | `X-COINS-APIKEY`                         | Endpoint requires sending a valid API Key.                -->
+MARKET_DATA | `X-COINS-APIKEY`                         | Endpoint requires sending a valid API Key.               
 
 * `USER_DATA` endpoints are `SIGNED` endpoints.
 
