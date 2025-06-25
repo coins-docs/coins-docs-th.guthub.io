@@ -167,7 +167,7 @@ server.
 
 
 
-<!-- ### SIGNED Endpoint Examples for POST /openapi/v1/order
+### SIGNED Endpoint Examples for POST /openapi/v1/order
 
 Here is a step-by-step example of how to send a valid signed payload from the
 Linux command line using `echo`, `openssl`, and `curl`:
@@ -205,7 +205,7 @@ timestamp | 1538323200000
 
 
 
-<!-- #### Example 2: As a request body
+#### Example 2: As a request body
 
 * **requestBody:** sourceCurrency=BTC&targetCurrency=THB&recvWindow=5000&timestamp=1538323200000
 * **HMAC SHA256 signature:**
@@ -213,7 +213,7 @@ timestamp | 1538323200000
 ```shell
 [linux]$ echo -n "sourceCurrency=BTC&targetCurrency=THB&recvWindow=5000&timestamp=1538323200000" | openssl dgst -sha256 -hmac "lH3ELTNiFxCQTmi9pPcWWikhsjO04Yoqw3euoHUuOLC3GYBW64ZqzQsiOEHXQS76"
 (stdin)= 6a2cfc4f792ff338ed413ec2197540b46fead0e43c143eb5d04992a4d7d6622d -->
-<!-- ```
+```
 
 * **curl command:**
 
@@ -633,50 +633,6 @@ If the client_transfer_id or id parameter is passed in, the type parameter is in
 
 
 
-<!-- #### (comment:payment) Payment request (USER_DATA)
-
-```shell
-POST /openapi/v3/payment-request/payment-requests (HMAC SHA256)
-```
-Initiate a new payment transaction by creating a payment request.
-**Weight:** 1
-
-**Parameters:**
-
-Name              | Type    | Mandatory | Description
------------------|---------|----------|--------------------------------------------------------------------------------------
-payer_contact_info            | STRING  | YES      | The contact information, typically an email address, to which the payment request should be sent.
-receiving_account | STRING  | YES      |  Either the token (e.g. THB) or the Balance ID (e.g. 1447779051242545455 Refer to the id field in /openapi/account/v3/crypto-accounts.) to be transferred.
-amount          | DECIMAL | YES      |  The requested amount to be transferred to the requestor's receiving_account.
-message          | STRING  | YES      | An arbitrary message that will be attached to the payment request.
-supported_payment_collectors          | STRING  | NO       | Methods of payment that are available to a user when they view a payment request, optional items `coins_peso_wallet,CEBL,MLH,PLWN`,  e.g. `["coins_peso_wallet"]` or `["coins_peso_wallet","CEBL","MLH","PLWN"]`. Note: when a payment method is closed, it will be unavailable. 
-expires_at          | STRING  | NO       | The expiration date of the payment request. Expected to be in ISO 8601 datetime format (e.g., 2016-10-20T13:00:00.000000Z) or a time delta from the current time (Option:1w,3d,2h,32m,5s). The default expiration period is set to 7 days.
-recvWindow | LONG    | NO        | The value cannot be greater than `60000`
-timestamp          | LONG    | YES        |
-
-**Response:**
-
-```javascript
-{
-    "payment-request": {
-        "message": "i am boss",
-        "id": "1433341829953096704",
-        "invoice": "1433341829953096704",
-        "amount": "20",
-        "currency": "THB",
-        "status": "pending",//pending,fully_paid,expired,canceled
-        "created_at": "1685603661217",
-        "updated_at": "1685603661217",
-        "expires_at": "1686208461219",
-        "supported_payment_collectors": "[\"coins_peso_wallet\"]",
-        "payment_url": "https://www.pro.coins.ph/payment/invoice/1433341829953096704",
-        "payer_contact_info": "jennins@coins.ph"
-    }
-}
-``` -->
-
-
-
 #### Account information (USER_DATA)
 
 ```shell
@@ -745,96 +701,7 @@ timestamp | LONG | YES |
 
 
 
-<!-- #### Order book
-
-```shell
-GET /openapi/quote/v1/depth
-```
-
-**Weight:**
-
-Adjusted based on the limit:
-
-Limit | Weight
------------- | ------------
-5, 10, 20, 50, 100 | 1
-200 | 5
-
-**Parameters:**
-
-Name | Type | Mandatory | Description
------------- | ------------ | ------------ | ------------
-symbol | STRING | YES |
-limit | INT | NO | Default 100; max 200.
-
-**Caution:** setting limit=0 can return 200 records.
-
-**Response:**
-
-[PRICE, QTY]
-
-```javascript
-{
-  "lastUpdateId": 1027024,
-  "bids": [
-    [
-      "4.90000000",   // PRICE
-      "331.00000000"  // QTY
-    ],
-    [
-      "4.00000000",
-      "431.00000000"
-    ]
-  ],
-  "asks": [
-    [
-      "4.00000200",  // PRICE
-      "12.00000000"  // QTY
-    ],
-    [
-      "5.10000000",
-      "28.00000000"
-    ]
-  ]
-}
-```
-
-
-
-#### Recent trades list
-
-```shell
-GET /openapi/quote/v1/trades
-```
-
-Get recent trades (up to last 60).
-
-**Weight:** 1
-
-**Parameters:**
-
-Name | Type | Mandatory | Description
------------- | ------------ | ------------ | ------------
-symbol | STRING | YES |EXP: BTCUSDT
-limit | INT | NO | Default 500; max 1000. if limit <=0 or > 1000 then return 1000
-
-**Response:**
-
-```javascript
-[
-  {
-    "id": 28457,
-    "price": "4.00000100",
-    "qty": "12.00000000",
-    "quoteQty": "48.000012",
-    "time": 1499865549590,
-    "isBuyerMaker": true,
-    "isBestMatch": true
-  }
-]
-```
-
-
+### Market Data endpoints
 
 #### Kline/Candlestick data
 
@@ -1371,7 +1238,7 @@ errorMessage	| Error message if order failed.
 
 
 
-<!-- ### User data stream endpoints
+### User data stream endpoints
 
 Specifics on how user data streams work is in another document(user-data-stream.md).
 
