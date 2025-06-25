@@ -9,7 +9,7 @@ title: "Rest-Api"
 
 <!--more-->
 
-**# Public Rest API for Coins (2025-06-19)
+**# Public Rest API for Coins (2025-06-20)
 
 ## General API Information
 
