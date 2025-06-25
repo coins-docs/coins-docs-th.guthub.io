@@ -712,47 +712,47 @@ timestamp | LONG | YES |
 
 ```javascript
 {
-   "canDeposit":true,
-   "canTrade":true,
-   "canWithdraw":true,
-   "balances":[
-      {
-         "asset":"ETH",
-         "free":"0.1",
-         "locked":"0"
-      },
-      {
-         "asset":"BTC",
-         "free":"0.00005",
-         "locked":"0"
-      }
-   ],
-   "token":"THB",
-   "daily":{
-      "cashInLimit":"500000",
-      "cashInRemaining":"499994",
-      "cashOutLimit":"500000",
-      "cashOutRemaining":"500000",
-      "totalWithdrawLimit":"500000",
-      "totalWithdrawRemaining":"500000"
-   },
-   "monthly":{
-      "cashInLimit":"10000000",
-      "cashInRemaining":"9999157",
-      "cashOutLimit":"10000000",
-      "cashOutRemaining":"10000000",
-      "totalWithdrawLimit":"10000000",
-      "totalWithdrawRemaining":"10000000"
-   },
-   "annually":{
-      "cashInLimit":"120000000",
-      "cashInRemaining":"119998577",
-      "cashOutLimit":"120000000",
-      "cashOutRemaining":"119999488",
-      "totalWithdrawLimit":"120000000",
-      "totalWithdrawRemaining":"119998487.97"
-   },
-   "updateTime":1707273549694
+  "annually": {
+    "cashInLimit": "400000000",
+    "cashInRemaining": "400000000",
+    "cashOutLimit": "400000000",
+    "cashOutRemaining": "400000000",
+    "totalWithdrawLimit": "800000000",
+    "totalWithdrawRemaining": "800000000"
+  },
+  "balances": [
+    {
+      "asset": "THB",
+      "free": "161.61",
+      "locked": "0"
+    },
+    {
+      "asset": "USDT",
+      "free": "19.085339",
+      "locked": "0"
+    }
+  ],
+  "canDeposit": true,
+  "canTrade": true,
+  "canWithdraw": true,
+  "daily": {
+    "cashInLimit": "2000000",
+    "cashInRemaining": "2000000",
+    "cashOutLimit": "2000000",
+    "cashOutRemaining": "2000000",
+    "totalWithdrawLimit": "4000000",
+    "totalWithdrawRemaining": "4000000"
+  },
+  "monthly": {
+    "cashInLimit": "60000000",
+    "cashInRemaining": "60000000",
+    "cashOutLimit": "60000000",
+    "cashOutRemaining": "60000000",
+    "totalWithdrawLimit": "120000000",
+    "totalWithdrawRemaining": "120000000"
+  },
+  "token": "THB",
+  "updateTime": 1750769650420
 }
 ```
 
