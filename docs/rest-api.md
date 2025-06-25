@@ -933,17 +933,17 @@ expiry	| Quote expire time seconds.
 
 ```javascript
 {
-  "status": 0, 
-  "error": "OK", 
   "data": {
-            "quoteId": "19805702457826526722convert",
-            "sourceCurrency": "USDT",
-            "targetCurrency": "THB",
-            "sourceAmount": "5",
-            "price": "32.3229",             //1USDT=32.3229THB
-            "targetAmount": "161.61",       //The amount of THB the user holds
-            "expiry": "7"
-  }
+    "expiry": "7",
+    "price": "32.3229",                         //1 USDT = 32.3229 THB
+    "quoteId": "19805702457826526722convert",
+    "sourceAmount": "5",
+    "sourceCurrency": "USDT",
+    "targetAmount": "161.61",                   //The amount of THB the user holds
+    "targetCurrency": "THB"
+  },
+  "error": "OK",
+  "status": 0
 }
 ```
 
@@ -975,12 +975,12 @@ data.status	| The order status is an enumeration with values `SUCCESS`, `PROCESS
 
 ```javascript
 {
-  "status": 0, 
   "data": {
-         "orderId" : "49d10b74c60a475298c6bbed08dd58fa",
-         "status": "SUCCESS"
+    "orderId": "19805707243820006402convert",
+    "status": "SUCCESS"
   },
-  "error": "ok"
+  "error": "OK",
+  "status": 0
 }
 ```
 
@@ -1053,7 +1053,7 @@ errorMessage	| Error message if order failed.
       "targetAmount": "4466.89275956",
       "price": "40608.115996",
       "status": "SUCCESS",
-      "createdAt": "1671797993000",
+      "createdAt": "1750838429000",
       "errorCode": "",
       "errorMessage": "",
       "inversePrice": "3306.115996"
