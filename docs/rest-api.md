@@ -1185,7 +1185,7 @@ timestamp     | LONG  | YES    | A point in time for which transfers are being q
 }
 ```
 
-### Create a Virtual Sub-account(For Master Account)
+#### Create a Virtual Sub-account(For Master Account)
 
 This interface currently supports the creation of virtual sub-accounts (maximum 30).
 
@@ -1214,7 +1214,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 ```
 
 
-### Query Sub-account Assets (For Master Account)
+#### Query Sub-account Assets (For Master Account)
 
 Query detailed balance information of a sub-account via the master account (applies to master accounts only).
 
@@ -1253,7 +1253,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 
 
 
-### Universal Transfer (For Master Account)
+#### Universal Transfer (For Master Account)
 
 Master account can initiate a transfer from any of its sub-accounts to the master account, or from the master account to any sub-account.
 
@@ -1292,7 +1292,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 }
 ```
 
-### Transfer to Master (For Sub-account)
+#### Transfer to Master (For Sub-account)
 
 Sub-account can initiate a transfer from itself to the master account.
 
@@ -1321,7 +1321,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 }
 ```
 
-### Query Universal Transfer History (For Master Account)
+#### Query Universal Transfer History (For Master Account)
 
 Applies to master accounts only.
 If startTime and endTime are not sent, this will return records of the last 30 days by default.
@@ -1372,7 +1372,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 ```
 
 
-### Sub-account Transfer History (For Sub-account)
+#### Sub-account Transfer History (For Sub-account)
 
 Applies to sub-accounts only.
 If startTime and endTime are not sent, this will return records of the last 30 days by default.
@@ -1419,7 +1419,7 @@ clientTranId     | STRING   | NO       |
 ```
 
 
-### Get IP Restriction for a Sub-account API Key (For Master Account)
+#### Get IP Restriction for a Sub-account API Key (For Master Account)
 
 Query detailed IPs for a sub-account API key.
 
@@ -1452,7 +1452,7 @@ timestamp     | LONG   | YES       | A point in time for which transfers are bei
 }
 ```
 
-###  Add IP Restriction for Sub-Account API key (For Master Account)
+#### Add IP Restriction for Sub-Account API key (For Master Account)
 
 ```shell
 POST /openapi/v1/sub-account/apikey/add-ip-restriction
@@ -1485,7 +1485,7 @@ timestamp     | LONG   | YES       | A point in time for which transfers are bei
 }
 ```
 
-###  Delete IP List For a Sub-account API Key (For Master Account)
+#### Delete IP List For a Sub-account API Key (For Master Account)
 
 ```shell
 POST /openapi/v1/sub-account/apikey/delete-ip-restriction
@@ -1518,7 +1518,7 @@ timestamp     | LONG   | YES       | A point in time for which transfers are bei
 ```
 
 
-###  Get Sub-account Deposit Address(For Master Account)
+#### Get Sub-account Deposit Address(For Master Account)
 
 ```shell
 GET /openapi/v1/sub-account/wallet/deposit/address
@@ -1549,7 +1549,7 @@ timestamp     | LONG   | YES       | A point in time for which transfers are bei
 }
 ```
 
-###  Get Sub-account Deposit History(For Master Account)
+#### Get Sub-account Deposit History(For Master Account)
 
 ```shell
 GET /openapi/v1/sub-account/wallet/deposit/history
@@ -1612,7 +1612,7 @@ Fetch deposit history.
 ]
 ```
 
-### Collect sub-account assets (For Master Account)
+#### Collect sub-account assets (For Master Account)
 
 ```shell
 POST /openapi/v1/fund-collect/collect-from-sub-account
@@ -1650,7 +1650,7 @@ remark | LONG   | NO        |
 
 
 
-### Retrieve asset collection records (USER_DATA)
+#### Retrieve asset collection records (USER_DATA)
 
 ```shell
 GET /openapi/v1/fund-collect/get-fund-record
