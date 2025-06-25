@@ -655,9 +655,9 @@ timestamp | LONG | YES |
 
 ```javascript
 {
-    "coin": "ETH",
-    "address": "0xfe98628173830bf79c59f04585ce41f7de168784",
-    "addressTag": ""
+  "address": "0x73d132fd814b860b52cc5e3f6360489babf6f170",
+  "addressTag": "",
+  "coin": "USDT"
 }
 ```
 
@@ -734,30 +734,18 @@ Fetch deposit history.
 
 ```javascript
 [
-    {
-        "id": "d_769800519366885376",
-        "amount": "0.001",
-        "coin": "BTC",
-        "network": "BTC",
-        "status": 0,
-        "address": "15g7UoRTVjAdUnHyRMCt4RrZ4m1Aib61rr",
-        "addressTag": "",
-        "txId": "2e5adfb42d5b60582bfcddbf51b06fc7a9ee458f5e61b6a00e333329274a13e6",
-        "insertTime": 1661493146000,
-        "confirmNo": 10,
-    },
-    {
-        "id": "d_769754833590042625",
-        "amount":"0.5",
-        "coin":"ETH",
-        "network":"ETH",
-        "status":1,
-        "address":"0x386AE30AE2dA293987B5d51ddD03AEb70b21001F",
-        "addressTag":"",
-        "txId":"0x4ae2fed36a90aada978fc31c38488e8b60d7435cfe0b4daed842456b4771fcf7",
-        "insertTime":1599620082000,
-        "confirmNo": 20,
-    }
+  {
+    "address": "0x73d132fd814b860b52cc5e3f6360489babf6f170",
+    "addressTag": "",
+    "amount": "24.085339",
+    "coin": "USDT",
+    "confirmNo": 100,
+    "id": "d_250625000011140125",
+    "insertTime": 1750838054000,
+    "network": "BSC",
+    "status": 1,
+    "txId": "0x686594292283a496156d06a6db9caee824e44e48dd5690a541f88cb7bc1bd605"
+  }
 ]
 ```
 
