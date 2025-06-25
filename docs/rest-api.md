@@ -654,7 +654,6 @@ timestamp | LONG | YES |
 
 ```javascript
 {
-   "accountType":"SPOT",
    "canDeposit":true,
    "canTrade":true,
    "canWithdraw":true,
