@@ -747,6 +747,65 @@ timestamp | LONG | YES |
 
 
 
+#### Api Key information (USER_DATA)
+
+```shell
+GET /openapi/v1/api-keys (HMAC SHA256)
+```
+
+GET current api key information.
+
+**Weight:** 10
+
+**Parameters:**
+
+Name | Type | Mandatory | Description
+------------ | ------------ | ------------ | ------------
+recvWindow | LONG | NO |The value cannot be greater than `60000`
+timestamp | LONG | YES |
+
+**Response:**
+
+```javascript
+[
+   {
+      "apiKey":"QdGqqftMXzW3qKceYHqwRjjvQvBsdVsMb1OFg4kOuVgV07lnTsh9jIJJLsXrOLug",
+      "apiName":"test",
+      "apiType":[
+         "Enable Spot",
+         "Enable Convert",
+         "Enable Crypto Wallet",
+         "Enable Fiat",
+         "Enable Account"
+      ],
+      "createTime":"1711520996538",
+      "ipAccessRestrictions":[
+         "57.181.16.43",
+         "1.1.1.1",
+         "1.1.1.2"
+      ],
+      "status":"NOT_ENABLE"
+   },
+   {
+      "apiKey":"oys7XrwQSV6SHvjRzWFTFWgmano88vm2iz8QCf6FN6VXYPbYVe7m6HmHqgkmYABF",
+      "apiName":"test",
+      "apiType":[
+         "Enable Spot",
+         "Enable Convert",
+         "Enable Fiat",
+         "Enable Crypto Wallet"
+      ],
+      "createTime":"1711537457048",
+      "ipAccessRestrictions":[
+         "57.181.16.43"
+      ],
+      "status":"ENABLE"
+   }
+]
+```
+
+
+
 #### Query balance (USER_DATA)
 
 ```shell
