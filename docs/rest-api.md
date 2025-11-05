@@ -5,6 +5,8 @@ title: "Rest-Api"
 
 
 ## Change log:
+2025-11-05: Added the `/openapi/wallet/v1/withdraw/address-whitelist` endpoint for checking system status. 
+
 2025-10-31: Added the `/openapi/v1/check-sys-status` endpoint for checking system status.
 
 <!--more-->
@@ -602,6 +604,49 @@ Fetch withdrawal history.
     "txId": "",
     "withdrawOrderId": ""
   }
+]
+```
+
+
+
+#### Withdraw Address Whitelist (USER_DATA)
+
+```shell
+GET /openapi/wallet/v1/withdraw/address-whitelist  (HMAC SHA256)
+```
+
+Get withdraw address whitelist for the user.
+
+**Weight(IP):** 2
+
+**Parameters:**
+
+| Name            | Type    | Mandatory | Description                                              |
+| --------------- | ------- | --------- | -------------------------------------------------------- |
+| coin            | STRING  | NO        |                                                          |
+| network         | STRING  | NO        |                                                          |
+| address         | STRING  | NO        |                                                          |
+| recvWindow      | LONG    | NO        |                                                          |
+| timestamp       | LONG    | YES       |                                                          |
+
+**Response:**
+
+```javascript
+[
+   {
+      "address":"TLUxwtKpzAWqp4hQikZnAnnbLMVbx1WCfN",
+      "addressName":"TRX address",
+      "addressTag":"",
+      "coin":"TRX",
+      "network":"TRX"
+   },
+   {
+      "address":"0x1dce8f2494b77bb4e1c5851a109360135ba84ac2",
+      "addressName":"USDT address",
+      "addressTag":"",
+      "coin":"USDT",
+      "network":"ETH"
+   }
 ]
 ```
 
