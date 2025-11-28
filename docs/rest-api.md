@@ -309,7 +309,7 @@ GET /openapi/v1/check-sys-status
 
 Check the system business status.
 
-**Weight:** 1
+**Weight(UID):** 2
 
 **Parameters:**
 
@@ -617,7 +617,7 @@ GET /openapi/wallet/v1/withdraw/address-whitelist  (HMAC SHA256)
 
 Get withdraw address whitelist for the user.
 
-**Weight(IP):** 2
+**Weight:** 1
 
 **Parameters:**
 
@@ -838,7 +838,7 @@ GET /openapi/v1/api-keys (HMAC SHA256)
 
 GET current api key information.
 
-**Weight:** 10
+**Weight:** 1
 
 **Parameters:**
 
@@ -925,7 +925,7 @@ timestamp     | LONG  | YES    | A point in time for which the balance is being 
 GET /openapi/v1/asset/transaction/history
 ```
 
-**Weight:** 10
+**Weight(UID):** 20
 
 **Parameters:**
 
@@ -1341,7 +1341,7 @@ Applies to master accounts only.
 GET /openapi/v1/sub-account/list
 ```
 
-**Weight:** 1
+**Weight(UID):** 10
 
 **Parameters:**
 
@@ -1381,7 +1381,8 @@ This interface currently supports the creation of virtual sub-accounts (maximum 
 POST /openapi/v1/sub-account/create
 ```
 
-**Weight:** 1
+**Weight(IP):** 60
+**Weight(UID):** 30
 
 **Parameters:**
 
@@ -1410,7 +1411,7 @@ Query detailed balance information of a sub-account via the master account (appl
 GET /openapi/v1/sub-account/asset
 ```
 
-**Weight:** 1
+**Weight(UID):** 10
 
 **Parameters:**
 
@@ -1449,7 +1450,7 @@ Master account can initiate a transfer from any of its sub-accounts to the maste
 POST /openapi/v1/sub-account/transfer/universal-transfer
 ```
 
-**Weight:** 1
+**Weight(UID):** 100
 
 **Parameters:**
 
@@ -1488,7 +1489,7 @@ Sub-account can initiate a transfer from itself to the master account.
 POST /openapi/v1/sub-account/transfer/sub-to-master
 ```
 
-**Weight:** 1
+**Weight(UID):** 100
 
 **Parameters:**
 
@@ -1518,7 +1519,7 @@ If startTime and endTime are not sent, this will return records of the last 30 d
 GET /openapi/v1/sub-account/transfer/universal-transfer-history
 ```
 
-**Weight:** 1
+**Weight(UID):** 10
 
 **Parameters:**
 
@@ -1569,7 +1570,7 @@ If startTime and endTime are not sent, this will return records of the last 30 d
 GET /openapi/v1/sub-account/transfer/sub-history
 ```
 
-**Weight:** 1
+**Weight(UID):** 10
 
 **Parameters:**
 
@@ -1615,7 +1616,7 @@ Query detailed IPs for a sub-account API key.
 GET /openapi/v1/sub-account/apikey/ip-restriction
 ```
 
-**Weight:** 1
+**Weight(UID):** 10
 
 **Parameters:**
 
@@ -1646,7 +1647,7 @@ timestamp     | LONG   | YES       | A point in time for which transfers are bei
 POST /openapi/v1/sub-account/apikey/add-ip-restriction
 ```
 
-**Weight:** 1
+**Weight(UID):** 30
 
 **Parameters:**
 
@@ -1679,7 +1680,7 @@ timestamp     | LONG   | YES       | A point in time for which transfers are bei
 POST /openapi/v1/sub-account/apikey/delete-ip-restriction
 ```
 
-**Weight:** 1
+**Weight(UID):** 30
 
 **Parameters:**
 
@@ -1715,7 +1716,7 @@ GET /openapi/v1/sub-account/wallet/deposit/address
 Fetch sub account deposit address with network.
 
 
-**Weight:** 10
+**Weight:** 1
 
 **Parameters:**
 
@@ -1746,7 +1747,7 @@ GET /openapi/v1/sub-account/wallet/deposit/history
 Fetch deposit history.
 
 
-**Weight(IP):** 2
+**Weight:** 1
 
 **Parameters:**
 
