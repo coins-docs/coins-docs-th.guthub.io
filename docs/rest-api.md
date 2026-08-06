@@ -1072,34 +1072,6 @@ precision	| The level of precision in decimal places used.
       "minSourceAmount": "50",
       "precision": "2",
       "sourceCurrency": "THB",
-      "targetCurrency": "BCH"
-    },
-    {
-      "maxSourceAmount": "13.9699",
-      "minSourceAmount": "0.0028",
-      "precision": "8",
-      "sourceCurrency": "BCH",
-      "targetCurrency": "THB"
-    },
-    {
-      "maxSourceAmount": "200000",
-      "minSourceAmount": "50",
-      "precision": "2",
-      "sourceCurrency": "THB",
-      "targetCurrency": "XRP"
-    },
-    {
-      "maxSourceAmount": "3088.38",
-      "minSourceAmount": "0.63",
-      "precision": "6",
-      "sourceCurrency": "XRP",
-      "targetCurrency": "THB"
-    },
-    {
-      "maxSourceAmount": "200000",
-      "minSourceAmount": "50",
-      "precision": "2",
-      "sourceCurrency": "THB",
       "targetCurrency": "USDT"
     },
     {
@@ -1219,12 +1191,12 @@ data.status	| The order status is an enumeration with values `SUCCESS`, `PROCESS
 
 ```javascript
 {
-  "data": {
-    "orderId": "19805707243820006402convert",
-    "status": "SUCCESS"
-  },
+  "status": 0,
   "error": "OK",
-  "status": 0
+  "data": {
+    "orderId": "22755602719193528324convert",
+    "status": "SUCCESS"
+  }
 }
 ```
 
