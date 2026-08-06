@@ -302,7 +302,7 @@ Test connectivity to the Rest API and get the current server time.
 
 ```javascript
 {
-  "serverTime": 1538323200000
+  "serverTime": 1786003907201
 }
 ```
 #### Check system status
@@ -327,10 +327,6 @@ Check the system business status.
 [
     {
         "businessType": "SPOT",
-        "businessStatus": "on"
-    },
-    {
-        "businessType": "CONVERT",
         "businessStatus": "on"
     }
 ]
@@ -362,7 +358,7 @@ Get the user ip.
 
 ```javascript
 {
-  "ip": "57.181.16.43"
+  "ip": "35.75.185.122"
 }
 ```
 
