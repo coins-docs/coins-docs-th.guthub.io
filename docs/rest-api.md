@@ -1179,17 +1179,15 @@ expiry	| Quote expire time seconds.
 
 ```javascript
 {
-  "data": {
-    "expiry": "7",
-    "price": "32.3229",                         //1 USDT = 32.3229 THB
-    "quoteId": "19805702457826526722convert",
-    "sourceAmount": "5",
-    "sourceCurrency": "USDT",
-    "targetAmount": "161.61",                   //The amount of THB the user holds
-    "targetCurrency": "THB"
-  },
+  "status": 0,
   "error": "OK",
-  "status": 0
+  "data": {
+    "quoteId": "22755602719193528324convert",
+    "sourceAmount": "10",
+    "targetAmount": "329.43",
+    "price": "32.943",
+    "expiry": "7"
+  }
 }
 ```
 
