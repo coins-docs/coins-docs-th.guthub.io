@@ -389,44 +389,92 @@ timestamp | LONG | YES |
 [
   {
     "coin": "THB",
-    "depositAllEnable": false,
-    "free": "161.61",
-    "legalMoney": true,
-    "locked": "0",
     "name": "THB",
-    "networkList": [],
-    "transferMinQuantity": "0",
+    "depositAllEnable": false,
+    "withdrawAllEnable": false,
+    "free": "446502.62",
+    "locked": "4943",
     "transferPrecision": 2,
-    "withdrawAllEnable": false
+    "transferMinQuantity": "0",
+    "networkList": [],
+    "legalMoney": true
   },
   {
     "coin": "BTC",
-    "depositAllEnable": true,
-    "free": "0",
-    "legalMoney": false,
-    "locked": "0",
     "name": "BTC",
+    "depositAllEnable": true,
+    "withdrawAllEnable": true,
+    "free": "9998.96926541",
+    "locked": "0",
+    "transferPrecision": 8,
+    "transferMinQuantity": "0",
     "networkList": [
       {
         "addressRegex": "^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$|^(bc1)[0-9A-Za-z]{39,59}$",
-        "depositEnable": true,
         "memoRegex": "",
-        "minConfirm": 1,
-        "name": "Bitcoin",
         "network": "BTC",
-        "sameAddress": false,
-        "unLockConfirm": 2,
-        "withdrawDesc": "",
+        "name": "Bitcoin",
+        "depositEnable": true,
+        "minConfirm": 3,
+        "unLockConfirm": 8,
+        "withdrawDesc": "saas- wallet- token - withdraw hint",
         "withdrawEnable": true,
-        "withdrawFee": "0.00009",
+        "withdrawFee": "0.000001",
         "withdrawIntegerMultiple": "0.00000001",
         "withdrawMax": "5",
-        "withdrawMin": "0.0005"
+        "withdrawMin": "0.0002",
+        "sameAddress": false
+      },
+      {
+        "addressRegex": "T[0-9a-zA-Z]{33}",
+        "memoRegex": "",
+        "network": "TRX",
+        "name": "Tronscan",
+        "depositEnable": false,
+        "minConfirm": 19,
+        "unLockConfirm": 20,
+        "withdrawDesc": "2",
+        "withdrawEnable": false,
+        "withdrawFee": "0.002",
+        "withdrawIntegerMultiple": "1",
+        "withdrawMax": "10",
+        "withdrawMin": "0.0001",
+        "sameAddress": false
+      },
+      {
+        "addressRegex": "^(0x)[0-9A-Za-z]{64}$",
+        "memoRegex": "",
+        "network": "SUI",
+        "name": "SUI",
+        "depositEnable": true,
+        "minConfirm": 1,
+        "unLockConfirm": -1,
+        "withdrawDesc": "saas- wallet management - token - withdraw hint--2 uma111111\nexipired",
+        "withdrawEnable": false,
+        "withdrawFee": "0",
+        "withdrawIntegerMultiple": "1",
+        "withdrawMax": "0",
+        "withdrawMin": "0",
+        "sameAddress": false
+      },
+      {
+        "addressRegex": "^[1-9A-HJ-NP-Za-km-z]{32,44}$",
+        "memoRegex": "",
+        "network": "SOL",
+        "name": "Solana",
+        "depositEnable": false,
+        "minConfirm": 1,
+        "unLockConfirm": 1,
+        "withdrawDesc": "",
+        "withdrawEnable": false,
+        "withdrawFee": "0",
+        "withdrawIntegerMultiple": "0.00001",
+        "withdrawMax": "2",
+        "withdrawMin": "1",
+        "sameAddress": false
       }
     ],
-    "transferMinQuantity": "0",
-    "transferPrecision": 8,
-    "withdrawAllEnable": true
+    "legalMoney": false
   }
 ]
 ```
@@ -456,9 +504,9 @@ timestamp | LONG | YES |
 
 ```javascript
 {
-  "address": "0x73d132fd814b860b52cc5e3f6360489babf6f170",
-  "addressTag": "",
-  "coin": "USDT"
+  "coin": "USDT",
+  "address": "0x398ed99dd98048fe342325f42a87b9dadf9bf430",
+  "addressTag": ""
 }
 ```
 
