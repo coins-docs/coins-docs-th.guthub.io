@@ -851,47 +851,58 @@ timestamp | LONG | YES |
 
 ```javascript
 {
-  "annually": {
-    "cashInLimit": "400000000",
-    "cashInRemaining": "400000000",
-    "cashOutLimit": "400000000",
-    "cashOutRemaining": "400000000",
-    "totalWithdrawLimit": "800000000",
-    "totalWithdrawRemaining": "800000000"
-  },
+  "canTrade": true,
+  "canDeposit": true,
+  "canWithdraw": true,
+  "accountType": "SPOT",
+  "updateTime": 1751337386031,
   "balances": [
     {
-      "asset": "THB",
-      "free": "161.61",
+      "asset": "BTC",
+      "free": "9998.96926541",
       "locked": "0"
     },
     {
+      "asset": "THB",
+      "free": "446502.62",
+      "locked": "4943"
+    },
+    {
       "asset": "USDT",
-      "free": "19.085339",
+      "free": "182.03",
       "locked": "0"
     }
   ],
-  "canDeposit": true,
-  "canTrade": true,
-  "canWithdraw": true,
+  "token": "THB",
+  "email": "john.zhang@coins.ph",
+  "enableWithdrawWhitelist": false,
   "daily": {
     "cashInLimit": "2000000",
     "cashInRemaining": "2000000",
-    "cashOutLimit": "2000000",
-    "cashOutRemaining": "2000000",
-    "totalWithdrawLimit": "4000000",
-    "totalWithdrawRemaining": "4000000"
+    "cashOutLimit": "4000000",
+    "cashOutRemaining": "3999996",
+    "totalWithdrawLimit": "5000000",
+    "totalWithdrawRemaining": "4999996"
   },
   "monthly": {
-    "cashInLimit": "60000000",
-    "cashInRemaining": "60000000",
-    "cashOutLimit": "60000000",
-    "cashOutRemaining": "60000000",
-    "totalWithdrawLimit": "120000000",
-    "totalWithdrawRemaining": "120000000"
+    "cashInLimit": "6000000",
+    "cashInRemaining": "6000000",
+    "cashOutLimit": "600000000",
+    "cashOutRemaining": "599999996",
+    "totalWithdrawLimit": "1200000000",
+    "totalWithdrawRemaining": "1199999996"
   },
-  "token": "THB",
-  "updateTime": 1750769650420
+  "annually": {
+    "cashInLimit": "800000000",
+    "cashInRemaining": "799600000",
+    "cashOutLimit": "90000000",
+    "cashOutRemaining": "89999996",
+    "totalWithdrawLimit": "8000000000000000000000000",
+    "totalWithdrawRemaining": "7999999999999999999999996"
+  },
+  "p2pDaily": null,
+  "p2pMonthly": null,
+  "p2pAnnually": null
 }
 ```
 
