@@ -929,35 +929,18 @@ timestamp | LONG | YES |
 
 ```javascript
 [
-   {
-      "apiKey":"QdGqqftMXzW3qKceYHqwRjjvQvBsdVsMb1OFg4kOuVgV07lnTsh9jIJJLsXrOLug",
-      "apiName":"your API name",
-      "apiType":[
-         "Enable Spot",
-         "Enable Convert",
-         "Enable Crypto Wallet",
-         "Enable Fiat",
-         "Enable Account"
-      ],
-      "createTime":"1711520996538",
-      "ipAccessRestrictions":[
-         "57.181.16.43",
-         "57.181.16.55"
-      ],
-      "status":"ENABLE"
-   },
-   {
-      "apiKey":"oys7XrwQSV6SHvjRzWFTFWgmano88vm2iz8QCf6FN6VXYPbYVe7m6HmHqgkmYABF",
-      "apiName":"your API name",
-      "apiType":[
-         "Read only",
-      ],
-      "createTime":"1711537457048",
-      "ipAccessRestrictions":[
-         "57.181.16.43"
-      ],
-      "status":"NOT_ENABLE"
-   }
+  {
+    "apiKey": "tuSWQyqrbK5SGy4a...",
+    "apiName": "test",
+    "apiType": [
+      "Enable Convert",
+      "Enable Fiat",
+      "Enable Account",
+      "Enable Crypto Wallet",
+      "Enable Spot"
+    ],
+    "status": "ENABLE"
+  }
 ]
 ```
 
