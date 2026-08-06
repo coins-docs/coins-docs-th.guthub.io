@@ -737,19 +737,19 @@ If the client_transfer_id or id parameter is passed in, the type parameter is in
 **Response:**
 ```javascript
 {
-  "transfer":
-    {
-      "id": "1451431230880900352",
-      "status": "success",//status enum: pending,success,failed
-      "account": "90dfg03goamdf02fs",
-      "target_address": "test@coins.ph",
-      "amount": "1",
-      "exchange": "1",
-      "payment": "23094j0amd0fmag9agjgasd",
-      "client_transfer_id": "1487573639841995271",
-      "message": "example",
-      "errorMessage":""//Error message returned when transfer fails, eg: Insufficient balance
-     }
+  "transfer": {
+    "id": "2275577651615089664",
+    "status": "success",
+    "account": "THB",
+    "amount": "2",
+    "exchange": null,
+    "payment": "2275577650843337728",
+    "message": "test",
+    "errorMessage": null,
+    "customSenderName": "test123",
+    "target_address": "john.zhang+1@coins.ph",
+    "client_transfer_id": "2275577650843337728"
+  }
 }
 ```
 
@@ -783,27 +783,44 @@ timestamp     | LONG  | YES    | A point in time for which transfers are being q
 
 **Response:**
 ```json
- {
+{
   "transfers": [
     {
-      "id": "2309rjw0amf0sq9me0gmadsmfoa",
-      "client_transfer_id": "1487573639841995270",
-      "account": "90dfg03goamdf02fs",
-      "amount": "1",
-      "fee_amount": "0",
-      "currency": "BTC",
-      "sourceAddress": "test1@gmail.com",
-      "target_address": "test2@gmail.com",
-      "payment": "23094j0amd0fmag9agjgasd",
-      "type": 2,//2:transfer out,1:transfer in
+      "id": "2275577651615089664",
+      "account": "1584164355099878400",
+      "amount": "2",
+      "currency": "THB",
+      "payment": "2275577650843337728",
+      "type": 2,
       "status": "success",
-      "message": "example",
-      "created_at": "2019-07-04T03:28:50.531599Z"
+      "message": "test",
+      "customSenderName": "test123",
+      "client_transfer_id": "2275577650843337728",
+      "fee_amount": "0",
+      "target_address": "john.zhang+1@coins.ph",
+      "source_address": "john.zhang@coins.ph",
+      "created_at": "2026-08-06T08:46:35.166+00:00"
+    },
+    {
+      "id": "2275577264891872256",
+      "account": "1584164355099878400",
+      "amount": "2",
+      "currency": "THB",
+      "payment": "2275577263952348160",
+      "type": 2,
+      "status": "success",
+      "message": "test",
+      "customSenderName": "test123",
+      "client_transfer_id": "2275577263952348160",
+      "fee_amount": "0",
+      "target_address": "john.zhang+1@coins.ph",
+      "source_address": "john.zhang@coins.ph",
+      "created_at": "2026-08-06T08:45:49.065+00:00"
     }
   ],
   "meta": {
-    "total_count": 0,
-    "next_page": 2,
+    "total_count": 2,
+    "next_page": 0,
     "previous_page": 0
   }
 }
