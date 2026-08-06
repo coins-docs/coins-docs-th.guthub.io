@@ -968,11 +968,16 @@ timestamp     | LONG  | YES    | A point in time for which the balance is being 
  {
   "crypto-accounts": [
     {
-      "id": "1451431230880900352",
-      "name": "name",
-      "currency": "BTC",
-      "balance": "1",
-      "pending_balance": "2"
+      "name": "BTC",
+      "balance": "9998.96926541"
+    },
+    {
+      "name": "THB",
+      "balance": "446177.19"
+    },
+    {
+      "name": "USDT",
+      "balance": "192.03"
     }
   ]
 }
@@ -1004,29 +1009,17 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 **Response:**
 ```json
  {
-  "meta": {
-    "has_next": false,
-    "next_page": 2,
-    "previous_page": 0
-  },
   "transactions": [
     {
+      "txId": "22755588806538058244convert",
       "bizSubject": "CONVERT",
-      "changed": "-5",
       "status": "SUCCESS",
-      "time": "1750838429677",
-      "tokenId": "USDT",
-      "txId": "19805707243820006402convert"
-    },
-    {
-      "bizSubject": "CHAIN_DEPOSIT",
-      "changed": "24.085339",
-      "status": "SUCCESS",
-      "time": "1750838101994",
-      "tokenId": "USDT",
-      "txId": "d_250625000011140125"
+      "changed": "-10"
     }
-  ]
+  ],
+  "meta": {
+    "has_next": false
+  }
 }
 ```
 
