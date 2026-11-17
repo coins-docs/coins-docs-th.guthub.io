@@ -717,7 +717,7 @@ Name       | Type  | Mandatory | Description
 -----------------|--------|-----------|--------------------------------------------------------------------------------------
 client_transfer_id | STRING | NO | Client Transfer ID, cannot send duplicate ID
 account      | STRING | YES    | The token (e.g. THB, BTC, ETH) to be transferred.
-target_address   | STRING | YES    | The phone number or email for recipient account (e.g. `+66 819876543` or `test@coins.ph`)
+target_address   | STRING | YES    | The phone number or email for recipient account (e.g. `+66 800 000 000` or `user@example.com`)
 amount      | BigDecimal | YES    | The amount being transferred
 recvWindow | LONG  | NO    | This value cannot be greater than `60000`
 timestamp     | LONG  | YES    | A point in time when the transfer is performed
@@ -747,7 +747,7 @@ If the client_transfer_id or id parameter is passed in, the type parameter is in
     "message": "test",
     "errorMessage": null,
     "customSenderName": "test123",
-    "target_address": "john.zhang+1@coins.ph",
+    "target_address": "sender@example.com",
     "client_transfer_id": "2275577650843337728"
   }
 }
@@ -772,8 +772,8 @@ id      | STRING | NO    | ID of the transfer record
 client_transfer_id| STRING | NO | Client Transfer ID, Maximum length 100
 page    | INT | NO | Current page, default is `1`
 per_page    | INT | NO | Quantity per page, default 2000, maximum `2000`
-from_address |STRING|NO| The phone number or email for sender account (e.g. +66 819876543 or test@coins.ph)
-to_address  |STRING|NO| The phone number or email for recipient account (e.g. +66 819876543 or test@coins.ph)
+from_address |STRING|NO| The phone number or email for sender account (e.g. +66 800 000 000 or user@example.com)
+to_address  |STRING|NO| The phone number or email for recipient account (e.g. +66 800 000 000 or user@example.com)
 recvWindow | LONG  | YES    | This value cannot be greater than `60000`
 timestamp     | LONG  | YES    | A point in time for which transfers are being queried.
 
@@ -797,8 +797,8 @@ timestamp     | LONG  | YES    | A point in time for which transfers are being q
       "customSenderName": "test123",
       "client_transfer_id": "2275577650843337728",
       "fee_amount": "0",
-      "target_address": "john.zhang+1@coins.ph",
-      "source_address": "john.zhang@coins.ph",
+      "target_address": "sender@example.com",
+      "source_address": "user@example.com",
       "created_at": "2026-08-06T08:46:35.166+00:00"
     },
     {
@@ -813,8 +813,8 @@ timestamp     | LONG  | YES    | A point in time for which transfers are being q
       "customSenderName": "test123",
       "client_transfer_id": "2275577263952348160",
       "fee_amount": "0",
-      "target_address": "john.zhang+1@coins.ph",
-      "source_address": "john.zhang@coins.ph",
+      "target_address": "sender@example.com",
+      "source_address": "user@example.com",
       "created_at": "2026-08-06T08:45:49.065+00:00"
     }
   ],
@@ -874,7 +874,7 @@ timestamp | LONG | YES |
     }
   ],
   "token": "THB",
-  "email": "john.zhang@coins.ph",
+  "email": "user@example.com",
   "enableWithdrawWhitelist": false,
   "daily": {
     "cashInLimit": "2000000",
@@ -1384,7 +1384,7 @@ timestamp     | LONG  | YES    | A point in time for which transfers are being q
 {
   "subAccounts": [
     {
-      "email": "thapi86003983@coins.ph",
+      "email": "user@example.com",
       "createTime": "1786003984502",
       "isFreeze": false
     }
@@ -1416,7 +1416,7 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
 **Response:**
 ```json
 {
-  "email": "thapi86003983@coins.ph",
+  "email": "user@example.com",
   "createTime": "1786003984502",
   "isFreeze": false
 }
@@ -1568,8 +1568,8 @@ timestamp     | LONG  | YES       | A point in time for which transfers are bein
   "result": [
     {
       "clientTranId": "2275561419157933056",
-      "fromEmail": "john.zhang@coins.ph",
-      "toEmail": "thapi86003983@coins.ph",
+      "fromEmail": "user@example.com",
+      "toEmail": "user@example.com",
       "asset": "THB",
       "amount": "1",
       "status": "success"
@@ -1614,8 +1614,8 @@ clientTranId     | STRING   | NO       |
   "result": [
     {
       "clientTranId": "1",
-      "fromEmail": "test@coins.ph",
-      "toEmail": "test1@coins.ph",
+      "fromEmail": "user@example.com",
+      "toEmail": "recipient@example.com",
       "asset": "BTC",
       "amount": "0.1",
       "createdAt": 1689744700710,
