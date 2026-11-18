@@ -26,7 +26,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          # SEC-27897: current Vite/sass-embedded requires Node >= 20.19;
+          # keep this in sync with yarn.lock.
+          node-version: 20
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
